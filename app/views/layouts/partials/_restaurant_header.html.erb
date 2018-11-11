@@ -1,12 +1,17 @@
-<div class="center jumbotron" style="background-image: url(<%= asset_path'hero-bg.jpg' %>); background-size: 100%; height: 600px; background-size:cover;">
+<div class="center jumbotron" style="background-image: url(<%= asset_path'hero-bg.jpg' %>); background-size: 100%; height: 650px; background-size:cover;">
+ 
+    <%= link_to "Roy's Place", root_path, id: "logo-letters" %>
+    <a class="logo-picture" <%= link_to "Roy's Place", root_path %> </a>
+    
+    
    
   <div class="mainNavbar">
     <ul>
       <li><%= link_to "Home", root_path %></li>
-      <li><a href="#">Menus</a></li>
-      <li><a href="#">Bagged</a></li>
-      <li><a href="#">Offers</a></li>
-      <li><a href="#">Engage-Us</a></li>
+      <li><%= link_to "Menus", static_pages_menus_path %></li>
+      <li><%= link_to "Menus", static_pages_bagged_path %></li>
+      <li><%= link_to "Menus", static_pages_offers_path %></li>
+      <li><%= link_to "Menus", static_pages_contact_path %></li>
       <li><a class="active" href="#">Log-In</a></li>
     </ul>
   </div>    
