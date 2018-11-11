@@ -5,11 +5,16 @@
     <title><%= full_title(yield(:title)) %> </title>
     <%= csrf_meta_tags %>
 
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA" %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render 'layouts/partials/restaurant_header' %>
+    
     <%= yield %>
+    <%= render 'layouts/partials/restaurant_footer' %>
   </body>
 </html>

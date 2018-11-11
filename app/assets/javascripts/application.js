@@ -10,6 +10,20 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
+//= require bootstrap
 //= require turbolinks
-//= require_tree .
+//= require jquery.easing
+//= font-awesome-rails
+//= require_tree .  
+
+/*Scrolls main nav bar up and down*/
+$(window).on('scroll', fuction(){
+      if($(window).scrollTop()){
+        $('mainNavbar').addClass('black');
+      }else{
+        $('mainNavbar').removeClass('black');
+      }
+      
+    }
+  }) 
