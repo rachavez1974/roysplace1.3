@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require mainjs
+//= require sliderjs
 //= require jquery
 //= require bootstrap
 //= require turbolinks

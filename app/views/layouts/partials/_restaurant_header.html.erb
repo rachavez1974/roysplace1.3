@@ -1,17 +1,16 @@
-<div class="center jumbotron" style="background-image: url(<%= asset_path'hero-bg.jpg' %>); background-size: 100%; height: 650px; background-size:cover;">
+<div class="center jumbotron" style="background-image: url(<%= asset_path'hero-bg.jpg' %>); background-size: 100%; height: 650px; background-size:cover; padding-bottom: 0px;">
  
     <%= link_to "Roy's Place", root_path, id: "logo-letters" %>
     <a class="logo-picture" <%= link_to "Roy's Place", root_path %> </a>
     
-    
-   
   <div class="mainNavbar">
     <ul>
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Menus", static_pages_menus_path %></li>
-      <li><%= link_to "Menus", static_pages_bagged_path %></li>
-      <li><%= link_to "Menus", static_pages_offers_path %></li>
-      <li><%= link_to "Menus", static_pages_contact_path %></li>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Menus", menus_path %></li>
+      <li><%= link_to "Bagged", bagged_path %></li>
+      <li><%= link_to "Offers", offers_path %></li>
+      <li><%= link_to "Engage-Us", contact_path %></li>
       <li><a class="active" href="#">Log-In</a></li>
     </ul>
   </div>    
@@ -25,7 +24,8 @@
               <h1>Delicious Recipes</h1>
               <p>
                  “Long practice has taught me that one pleasure leads to another, tell me what you eat, and I will tell you what you are.” Welcome to the lengthiest meal you'll ever eat in your life”. What begins as a breakfast demonstration of this technique for egg-and-cheese fondue turns into an impromptu day-long affair as we press more and more food on you, our delighted guests. (Jean Anthelme Brillat-Savarin)</p>
-              <a href="#" class="primary-btn text-uppercase">Check Our Menu</a>
+              <a class="primary-btn" <%= link_to "Check Our Menus", menus_path %></a>
+               
             </div>
           </div>
         </div>          
