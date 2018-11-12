@@ -34,7 +34,7 @@ body{
   margin-right: auto;
   width: 100px;
   height: 100px;
-  background: url('rplogopic.jpg') bottom;
+  background: image-url('rplogopic.jpg') bottom;
   text-indent: -99999px;
 }
 
@@ -48,7 +48,7 @@ body{
 /*Main nav bar */
 .mainNavbar {
   position: fixed;
-  background-image: url('top-banner.jpg');
+  background-image: image-url('top-banner.jpg');
   width: 100%;
   border-top: 1px white solid;
   border-bottom: 1px white solid;
