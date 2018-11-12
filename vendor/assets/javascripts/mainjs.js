@@ -18,12 +18,3 @@
 //= require_tree .  
 
 /*Scrolls main nav bar up and down*/
-$(window).on('scroll', fuction(){
-      if($(window).scrollTop()){
-        $('mainNavbar').addClass('black');
-      }else{
-        $('mainNavbar').removeClass('black');
-      }
-      
-    }
-  }) 
