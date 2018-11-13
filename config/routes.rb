@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/about'
-
-  get 'static_pages/contact'
-
-  get 'static_pages/menus'
-
-  get 'static_pages/offers'
-
-  get 'static_pages/bagged'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
+  get  '/about', to: 'static_pages#about', as: 'about'
+  get  '/contact', to: 'static_pages#contact'
+  get  '/menus', to: 'static_pages#menus'
+  get  '/offers', to: 'static_pages#offers'
+  get  '/bagged', to: 'static_pages#bagged'
 end

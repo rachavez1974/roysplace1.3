@@ -1,4 +1,4 @@
-@import "bootstrap-sprockets";
+  @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body{
@@ -34,7 +34,7 @@ body{
   margin-right: auto;
   width: 100px;
   height: 100px;
-  background: url('rplogopic.jpg') bottom;
+  background: image-url('rplogopic.jpg') bottom;
   text-indent: -99999px;
 }
 
@@ -46,25 +46,62 @@ body{
 
 
 /*Main nav bar */
-.mainNavbar {
+
+nav {
+
   position: fixed;
-  background-image: url('top-banner.jpg');
-  width: 100%;
-  border-top: 1px white solid;
-  border-bottom: 1px white solid;
-  padding-top: 10px;
+  padding-top: 15px;
+  background-image: image-url('top-banner.jpg');
+  text-align: center;
   margin-top: 100px;
   float:none;
   display: block;
-  text-align: center;
+  width: 100%;
   height: 50px;
+  box-sizing: border-box;
+  z-index: 1;
   transition: .3s;
 }
+
+nav.black{
+  background: rbga(0, 0, 0);
+  height: 50px;
+  padding: 10px 100px;
+}
+
+nav ul{
+  list-style: none;
+  float:right;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
   
-.mainNavbar  li {
-  display: inline-block;
-  margin: auto;
-  padding: 5px;
+
+nav ul li a{
+  padding: 12px 30px;
+  transition: .3s;
+}
+
+
+nav.black ul li a{
+  color: #FFFF;
+
+}
+
+nav.black ul li a:hover{
+  color: orange;
+}
+
+nav ul li a:focus{
+  outline: none;
+}
+
+nav ul li a.active{
+  background: #E2472F;
+  color: #FFFF;
+  border-radius: 6px;
+
 }
 
 a{ 
@@ -74,6 +111,7 @@ a{
 a:hover{
   color: orange;
 }
+
 a:link{
   text-decoration: none;
 }
@@ -242,11 +280,14 @@ a:link{
 .banner-content .primary-btn{
     background-color: red;  
     border: 10px solid red;
+    text-transform: uppercase;
+
 }
 
 .banner-content .primary-btn:hover{
+  padding: 5px;
   background:#222;
-  color:#fff
+  color:#fff;
 }
 
 

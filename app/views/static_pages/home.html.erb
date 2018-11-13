@@ -1,3 +1,46 @@
 <% provide(:title, "Home") %>
-<h1>This is home</h1>
 
+<script type="text/javascript">
+$(function(){
+    $('.scroll1').infiniteslide();
+    $('.scroll2').infiniteslide({
+      speed: 100,
+      direction: 'right'
+    });
+    $('.scroll3').infiniteslide({
+      speed: 300,
+      direction: 'down'
+    });
+    $('.scroll4').infiniteslide({
+      pauseonhover: false
+    });
+    $('.scroll5').infiniteslide({
+      speed: 50
+    });
+    $('.scroll6').infiniteslide({
+      speed: 200,
+      responsive: true
+    });
+    $('.scroll7').infiniteslide({
+      direction: 'right',
+      clone: 10
+    });
+  });</script>
+  
+<!-- Slider html begins here -->
+<div class="module">
+  <ul class="scroll1">
+    <li><%= image_tag('sliderpics/rpfront.jpg') %></li>
+    <li><%= image_tag('sliderpics/onesteak.jpg') %></li>
+    <li><%= image_tag('sliderpics/rpbar.jpg') %></li>
+    <li><%= image_tag('sliderpics/burger.jpg') %></li>
+    <li><%= image_tag('sliderpics/city.jpg') %></li>
+    <li><%= image_tag('sliderpics/rpdining.jpg') %></li>
+    <li><%= image_tag('sliderpics/twosteaks.jpg') %></li>
+    <li><%= image_tag('sliderpics/rpterrace.jpg') %></li>
+    <li><%= image_tag('sliderpics/sushi.jpg') %></li>
+    <li><%= image_tag('sliderpics/rpterracenight.jpg') %></li>
+    <li><%= image_tag('sliderpics/burger.jpg') %></li>  
+  </ul>
+</div>
+<!-- Slider html ends here. -->
