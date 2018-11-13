@@ -1,9 +1,23 @@
+<script type="text/javascript">
+  /*Scrolls main nav bar up and down*/
+$(window).on('scroll', function() {
+      if($(window).scrollTop()){
+        $('mainNavbar').addClass('black');  
+      }
+      else{
+        $('mainNavbar').removeClass('black');
+      }
+  });
+</script>
+
+
 <div class="center jumbotron" style="background-image: url(<%= asset_path'hero-bg.jpg' %>); background-size: 100%; height: 650px; background-size:cover; padding-bottom: 0px;">
  
     <%= link_to "Roy's Place", root_path, id: "logo-letters" %>
     <a class="logo-picture" <%= link_to "Roy's Place", root_path %> </a>
     
-  <div class="mainNavbar">
+  <!-- <div class="mainNavbar"> -->
+    <nav>
     <ul>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "About", about_path %></li>
@@ -11,9 +25,9 @@
       <li><%= link_to "Bagged", bagged_path %></li>
       <li><%= link_to "Offers", offers_path %></li>
       <li><%= link_to "Engage-Us", contact_path %></li>
-      <li><a class="active" href="#">Log-In</a></li>
+      <li><%= link_to "Log-In", '#' %></li>
     </ul>
-  </div>    
+  </nav>    
   <!-- mainNavbar -->
   <!-- start banner Area -->
       <section>   

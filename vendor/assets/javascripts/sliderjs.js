@@ -179,29 +179,3 @@ https://github.com/woodroots/infiniteslidev2
 	});
 })(jQuery);
 
-
-$(function(){
-    $('.scroll1').infiniteslide();
-    $('.scroll2').infiniteslide({
-      speed: 100,
-      direction: 'right'
-    });
-    $('.scroll3').infiniteslide({
-      speed: 300,
-      direction: 'down'
-    });
-    $('.scroll4').infiniteslide({
-      pauseonhover: false
-    });
-    $('.scroll5').infiniteslide({
-      speed: 50
-    });
-    $('.scroll6').infiniteslide({
-      speed: 200,
-      responsive: true
-    });
-    $('.scroll7').infiniteslide({
-      direction: 'right',
-      clone: 10
-    });
-  });
