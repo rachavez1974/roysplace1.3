@@ -1,0 +1,9 @@
+How to update app renaming app from CLI
+-heroku apps:rename newname
+*If name changed from Heroku Website
+-heroku apps:rename newname
+
+Assets images not displaying in production
+-Added the helper to the scss files because they’re supposed to be there.
+-I also added to “config.serve_static_assets = true” to application.rb
+
