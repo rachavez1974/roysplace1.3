@@ -1,4 +1,4 @@
-  @import "bootstrap-sprockets";
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 body{
@@ -24,6 +24,9 @@ body{
   text-decoration: none;  
 }
 
+.clr{
+  clear:both;
+}
 
 
 .logo-picture {
@@ -289,5 +292,48 @@ a:link{
   background:#222;
   color:#fff;
 }
+
+/*Reservation area*/
+.reservation-area{ 
+  background: image-url('reservation.jpg');
+  background-size:cover;
+  background-cover: 100%;
+  height: 500px;    
+}
+
+.reservation-box1{
+  padding-left: 50px;
+  padding-top: 70px;
+
+}
+
+.reservation-box2{
+  padding-left: 50px;
+  padding-top: 30px;
+
+}
+
+
+.reservation-area h1{
+  font-size: 30px;
+  line-height: 30px;
+  color: white;
+  font-weight: 900;
+}
+
+.reservation-area h3{
+  font-size: 15px;
+  line-height: 20px;
+  color: white;
+  
+}
+
+.reservation-form{
+  padding-left: 20px;
+  padding-top: 80px;
+  
+}
+
+
 
 

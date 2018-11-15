@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get  '/menus', to: 'static_pages#menus'
   get  '/offers', to: 'static_pages#offers'
   get  '/bagged', to: 'static_pages#bagged'
+
+  get '/signup', to: 'users#new'
 end
