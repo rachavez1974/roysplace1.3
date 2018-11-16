@@ -10,5 +10,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", about_path
     assert_select "a[href=?]", bagged_path
     assert_select "a[href=?]", offers_path
+    assert_select "a[href=?]", signup_path
   end
 end
