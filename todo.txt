@@ -1,0 +1,5 @@
+THINGS TO CHANGE BEFORE FINSIHING WEBSITE
+1. CHANGE USER MODEL PASSWORD TO AT LEAST 6 CHARS.
+2. Change last time ordered in customer profile for admin to last
+order ordered.
+3. Fix navbar to follow as scrolling down.

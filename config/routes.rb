@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get  '/offers', to: 'static_pages#offers'
   get  '/bagged', to: 'static_pages#bagged'
 
+  resources :users
   get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+
 end
