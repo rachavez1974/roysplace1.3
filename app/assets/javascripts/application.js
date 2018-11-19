@@ -15,7 +15,6 @@
 //= require jquery
 //= require bootstrap
 //= require turbolinks
-//= require rails-ujs
 //= require jquery.easing
 //= font-awesome-rails
 //= require_tree .  
