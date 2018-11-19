@@ -7,30 +7,31 @@ body{
   font-family: Arial, Helvitica, sans-serif;
 }
 
-#logo-letters{
+.main-container{
+  width: 100%;
+  background-image: image-url('hero-bg.jpg');
+  height: 550px;
+  background-size: 100%; 
+  background-size:cover; 
+
+}
+
+#main-header{
   float: left;
-  margin-top: 20px;
-  margin-left: 20px;
-  font-size: 3em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;  
+  color:white;
+  font-size: 50px;
+  font-weight: 600;
+  padding-top: 50px;
+  padding-left: 50px;
   font-family: Georgia;
-}
-
-#logo-letters:hover{
+  
+  &:hover{
   color: orange;
-  text-decoration: none;  
+  }
 }
 
-.clr{
-  clear:both;
-}
+#main-logo{  
 
-
-.logo-picture {
-  border: 2px red;
   border-radius: 10px;
   display: block;
   margin-left: auto;
@@ -38,33 +39,15 @@ body{
   width: 100px;
   height: 100px;
   background: image-url('rplogopic.jpg') bottom;
-  text-indent: -99999px;
-}
-
-
-.logo-picture:hover {
-  background-position: 0 0;
-}
-
-
-
-/*Main nav bar */
-
-nav {
-
+  background-repeat: no-repeat;
   
-  padding-top: 15px;
-  background-image: image-url('top-banner.jpg');
-  text-align: center;
-  margin-top: 70px;
-  float:none;
-  display: block;
-  width: 100%;
-  height: 50px;
-  box-sizing: border-box;
-  z-index: 1;
-  transition: .3s;
+
+
+  &:hover{
+  background-position: 0 0;
+  }
 }
+
 
 nav.black{
   background: rbga(0, 0, 0);
@@ -72,17 +55,11 @@ nav.black{
   padding: 10px 100px;
 }
 
-nav ul{
-  list-style: none;
-  float:right;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
+
   
 
 nav ul li a{
-  padding: 12px 30px;
+  padding: 50px 30px;
   transition: .3s;
 }
 
@@ -334,7 +311,5 @@ a:link{
   padding-top: 80px;
   
 }
-
-
 
 

@@ -4,7 +4,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
 
   test "attempting signing up with wrong information" do
-    get signup_path
+    get customer_signup_path
     assert_no_difference 'User.count' do
     post users_path, params: { user: {  first_name: " ",
                                         last_name: "",
@@ -30,7 +30,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   end
 
   test "attempting signing up with right information" do
-    get signup_path
+    get customer_signup_path
     assert_template 'users/new'
     assert_difference 'User.count', 1 do 
       post users_path, params: { user: {  first_name: "John",
@@ -43,10 +43,13 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                        }
                                }
     end
+
      follow_redirect!
      assert_template 'users/show'
+     assert is_logged_in?
      assert_not flash.empty?
      assert_select 'div.alert', "Welcome to Roy's Place!"
+     
   end
 
 end

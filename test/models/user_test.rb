@@ -7,10 +7,9 @@ class UserTest < ActiveSupport::TestCase
             birth_day: Date.parse('January, 8'), email: "razorcut@gamil.com",
             text_club: true, email_club: true, terms: true, password: "123",
             password_confirmation: "123")
-
   end
 
-  test "should be valid" do
+  test "user should be valid" do
     assert @user.valid?
   end
 
