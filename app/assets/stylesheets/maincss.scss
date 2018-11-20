@@ -1,0 +1,315 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+  margin: 0px;
+  padding:0px;
+  font-family: Arial, Helvitica, sans-serif;
+}
+
+.main-container{
+  width: 100%;
+  background-image: image-url('hero-bg.jpg');
+  height: 550px;
+  background-size: 100%; 
+  background-size:cover; 
+
+}
+
+#main-header{
+  float: left;
+  color:white;
+  font-size: 50px;
+  font-weight: 600;
+  padding-top: 50px;
+  padding-left: 50px;
+  font-family: Georgia;
+  
+  &:hover{
+  color: orange;
+  }
+}
+
+#main-logo{  
+
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+  background: image-url('rplogopic.jpg') bottom;
+  background-repeat: no-repeat;
+  
+
+
+  &:hover{
+  background-position: 0 0;
+  }
+}
+
+
+nav.black{
+  background: rbga(0, 0, 0);
+  height: 50px;
+  padding: 10px 100px;
+}
+
+
+  
+
+nav ul li a{
+  padding: 50px 30px;
+  transition: .3s;
+}
+
+
+nav.black ul li a{
+  color: #FFFF;
+
+}
+
+nav.black ul li a:hover{
+  color: orange;
+}
+
+nav ul li a:focus{
+  outline: none;
+}
+
+nav ul li a.active{
+  background: #E2472F;
+  color: #FFFF;
+  border-radius: 6px;
+
+}
+
+a{ 
+  color: white; 
+}
+
+a:hover{
+  color: orange;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+/*Footer */
+
+
+.full {
+  width: 100%; 
+}
+ 
+
+.footer{
+  margin: 0;
+  padding: 0;
+}
+ 
+.footer h3 {
+ 
+  border-bottom: 1px solid #BAC1C8; 
+  color:#fff; font-size: 18px; 
+  font-weight: 600;
+  line-height: 27px; 
+  padding: 10px 0 10px; 
+  text-transform: uppercase;
+   }
+
+.footer ul {
+   font-size: 13px; 
+   list-style-type: none; 
+   margin-left: 0; 
+   padding-left: 0; 
+   margin-top: 15px; color: #7F8C8D; 
+   }
+
+.footer ul li a {
+ padding: 0 0 5px 0; 
+ display: block; }
+ 
+.footer a {
+ color: #78828D; 
+ color:#fff; 
+ }
+
+ .footer ul li a:hover{
+   color: #66829e;
+ }
+
+ .footer ul li {
+   font-size: 15px; 
+   list-style-type: none; 
+   margin-left: 0; 
+   padding-left: 0; 
+   margin-top: 15px; color: #7F8C8D;
+   color: white; 
+
+ }
+ 
+.supportLi h4 {
+   font-size: 20px; 
+   font-weight: lighter; 
+   line-height: normal; 
+   margin-bottom: 0 !important; 
+   padding-bottom: 0;
+}
+ 
+ 
+ 
+.subscribe-btn .btn {
+ 
+  border: medium none; 
+  border-radius: 4px; 
+  display: inline-block; 
+  height: 40px; 
+  padding: 0; 
+  width: 100%; color: #fff; 
+  margin-top:10px;
+}
+ 
+.subscribe-btn {
+  overflow: hidden;
+}
+  
+.social li {
+ border: 2px solid #B5B5B5; 
+ -webkit-border-radius: 50%; 
+ -moz-border-radius: 50%;
+ -o-border-radius: 50%; 
+ -ms-border-radius: 50%; 
+ border-radius: 50%; 
+ float: left; 
+ height: 36px; 
+ line-height: 36px; 
+ margin: 0 8px 0 0; 
+ padding: 0; 
+ text-align: center; 
+ width: 36px; 
+ transition: all 0.5s ease 0s; 
+ -moz-transition: all 0.5s ease 0s; 
+ -webkit-transition: all 0.5s ease 0s; 
+ -ms-transition: all 0.5s ease 0s; 
+ -o-transition: all 0.5s ease 0s;
+}
+ 
+ 
+ 
+.social li a {
+ color: #EDEFF1;
+}
+ 
+.social li:hover {
+ border: 2px solid #2c3e50; 
+ background: #2c3e50;
+}
+ 
+.social li a i {
+ font-size: 16px; 
+ margin: 0 0 0 5px; 
+ color: #EDEFF1 !important;
+}
+ 
+.footer-bottom {
+  background: #40E0D0; 
+  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+  border-top: 1px solid #DDDDDD;
+  padding-top: 20px; 
+  padding-bottom: 20px; 
+  color:#fff;
+}
+ 
+.footer-bottom p.pull-left { padding-top: 6px; }
+ 
+.payments { font-size: 1.5em; }
+
+
+/*Banner */
+
+.banner-content{ margin-top:5px }
+
+.banner-content h6{
+  color:#fff; font-size: 15px; 
+  font-weight: 300;
+  line-height: 27px; 
+  padding: 5px 0 10px; 
+  text-transform: uppercase;
+}
+
+.banner-content h1{ 
+  color:#fff; font-size: 55px; 
+  font-weight: 600;
+  line-height: 27px; 
+  padding: 10px 0 10px; 
+  text-transform: uppercase;
+}
+
+.banner-content p{
+  color:#fff; font-size: 15px; 
+  font-weight: 75;
+  line-height: 20px; 
+  padding: 10px 0 10px;
+  max-width:525px;
+  margin-bottom:30px 
+  
+}
+
+.banner-content .primary-btn{
+  margin-right: 20px;
+  background-color: red;  
+  border: 10px solid red;
+  text-transform: uppercase;
+
+}
+
+.banner-content .primary-btn:hover{
+  padding: 5px;
+  background:#222;
+  color:#fff;
+}
+
+/*Reservation area*/
+  .reservation-area{ 
+  background: image-url('reservation.jpg');
+  background-size:cover;
+  background-cover: 100%;
+  height: 500px;    
+}
+
+.reservation-box1{
+  padding-left: 50px;
+  padding-top: 70px;
+
+}
+
+.reservation-box2{
+  padding-left: 50px;
+  padding-top: 30px;
+
+}
+
+
+.reservation-area h1{
+  font-size: 30px;
+  line-height: 30px;
+  color: white;
+  font-weight: 900;
+}
+
+.reservation-area h3{
+  font-size: 15px;
+  line-height: 20px;
+  color: white;
+  
+}
+
+.reservation-form{
+  padding-left: 20px;
+  padding-top: 80px;
+  
+}
+
+

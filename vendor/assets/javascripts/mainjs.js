@@ -1,16 +1,3 @@
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require mainjs
-//= require sliderjs
-//= require jquery
-//= require bootstrap
-//= require turbolinks
-//= require jquery.easing
-//= font-awesome-rails
-//= require_tree .  
-
 
 //Scrolls main nav bar up and down
 $(window).on('scroll', function() {

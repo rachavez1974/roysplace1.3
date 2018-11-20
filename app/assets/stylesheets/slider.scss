@@ -1,0 +1,21 @@
+
+.module {
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+}
+.module > p {
+	padding: 0 20px;
+}
+.module > h2 {
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 0 20px;
+}
+
+pre {
+	padding: 10px;
+	margin: 20px;
+	background: #eee;
+	overflow: auto;
+}
