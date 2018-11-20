@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get    '/customer/login',  to: 'sessions#new_user_session'
+  post   '/customer/login',  to: 'sessions#create_user_session'
+  delete '/customer/logout',  to: 'sessions#destroy'
+
+  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
   get  '/about', to: 'static_pages#about', as: 'about'
@@ -9,7 +15,7 @@ Rails.application.routes.draw do
   get  '/bagged', to: 'static_pages#bagged'
 
   resources :users
-  get '/signup', to: 'users#new'
-  post '/signup', to: 'users#create'
+  get 'customer/signup', to: 'users#new'
+  post 'customer/signup', to: 'users#create'
 
 end

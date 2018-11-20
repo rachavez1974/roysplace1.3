@@ -1,2 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+razor:
+  first_name: Razor 
+  last_name: Ramon 
+  phone_number: 2408675309
+  birth_day: Date.parse('January, 8')
+  email: razor@gmail.com
+  text_club: true
+  email_club: true
+  terms: true
+  password_digest: <%= User.digest('password') %> 
