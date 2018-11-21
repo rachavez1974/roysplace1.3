@@ -11,5 +11,5 @@ class SessionsAdminController < SessionsController
   def destroy
     super
   end
-
+  
 end

@@ -3,3 +3,5 @@ THINGS TO CHANGE BEFORE FINSIHING WEBSITE
 2. Change last time ordered in customer profile for admin to last
 order ordered.
 3. Fix navbar to follow as scrolling down.
+4. Log in form needs to be finished with forgot and remove all html.
+
