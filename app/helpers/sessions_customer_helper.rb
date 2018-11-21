@@ -1,0 +1,2 @@
+module SessionsCustomerHelper
+end
