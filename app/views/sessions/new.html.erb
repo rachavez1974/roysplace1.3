@@ -200,7 +200,7 @@ form.login a:hover
         Sign In</p>
         
        
-        <%= form_for(:session, url: customer_login_path,  html: {class: "login"}) do |f| %>    
+        <%= form_for(:session, url: yield(:path),  html: {class: "login"}) do |f| %>    
           <%= f.label :email  %>
           <%= f.text_field :email, placeholder: "Type your email here", class: 'form-control' %>
           <%= f.label :password %>
