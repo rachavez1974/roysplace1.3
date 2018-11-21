@@ -205,21 +205,27 @@ form.login a:hover
           <%= f.text_field :email, placeholder: "Type your email here", class: 'form-control' %>
           <%= f.label :password %>
           <%= f.password_field :password, placeholder: "Type your password here", class: 'form-control' %>
+
+          <div class="row">
+              <div class="col-md-6">
+                <%= f.check_box :remember_me %>
+                <label><%= f.label :remember_me %></label> 
+              </div>
+              <label>
+        <input type="checkbox" onclick="showMyPassword('session_password')">Show Password</label>  
+      
+          </div>
+              
+          
           <%= f.submit "Log-In", class: "btn btn-success btn-sm"%>
           
           <div class="remember-forgot">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" />
-                    Remember Me
-                  </label>
-                </div>
-              </div>
+              <div class="row">
               <div class="col-md-6 forgot-pass-content">
                 <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
               </div>
+              </div>
+              
             </div>
           </div>
           <% end %>
