@@ -9,3 +9,14 @@ razor:
   email_club: true
   terms: true
   password_digest: <%= User.digest('password') %> 
+
+nemo:
+  first_name: Nmanja
+  last_name: Djuric
+  phone_number: 24086434208
+  birth_day: Date.parse('January, 4')
+  email: mr.james.bond@gmail.com
+  text_club: true
+  email_club: true
+  terms: true
+  password_digest: <%= User.digest('password') %> 

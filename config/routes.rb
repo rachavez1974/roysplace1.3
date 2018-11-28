@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   #log in routes for customers and admins
+
+  
+  
+
+
   get    '/customer/login',  to: 'sessions_customer#new'
   post   '/customer/login',  to: 'sessions_customer#create'
-  delete '/customer/logout', to: 'sessions_customer#destroy'
+  delete '/customer/logout', to:  'sessions_customer#destroy'
 
   get    '/admin/login',   to: 'sessions_admin#new'
-  post   '/admin/login',   to: 'sessions_adsmin#create'
+  post   '/admin/login',   to: 'sessions_admin#create'
   delete '/admin/logout',  to: 'sessions_admin#destroy'
 
 

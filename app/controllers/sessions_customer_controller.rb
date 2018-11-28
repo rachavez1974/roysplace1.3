@@ -1,7 +1,6 @@
-class SessionsCustomerController < SessionsController
+class SessionsCustomerController < ApplicationController
   
-  def new
-    super
+  def new  
   end
 
   def create
@@ -10,7 +9,7 @@ class SessionsCustomerController < SessionsController
           log_in(@user)
           params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
           flash[:success] = "Welcome back #{@user.first_name}"   
-          redirect_to root_path
+          redirect_back_or @user
       else
           flash.now[:danger] = 'Invalid email/password combination'
           render  'new'
@@ -18,7 +17,16 @@ class SessionsCustomerController < SessionsController
   end
 
   def destroy
-    super
+    log_out if logged_in?
+    redirect_to root_url
+
+    # if current_user.admin
+    # log_out if logged_in?
+    #   redirect_to admin_dashboard_url
+    # else
+    #   log_out if logged_in?
+    #   redirect_to root_url
+    # end
   end
 
 

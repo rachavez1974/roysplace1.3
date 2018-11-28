@@ -24,7 +24,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div.invalid-feedback', "Email can't be blank and Email is invalid"
     assert_select 'div.invalid-feedback', "Phone number can't be blank and Phone number is invalid"
     assert_select 'div.invalid-feedback', "Password can't be blank"
-    assert_select 'div.invalid-feedback', "Password confirmation can't be blank and Password confirmation is too short (minimum is 1 character)"
     assert_select 'div.invalid-feedback', "Terms can't be blank and Terms can't be blank"
 
   end

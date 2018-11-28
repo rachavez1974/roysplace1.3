@@ -39,7 +39,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "phone number should not be more than 10 numbers" do
-    @user.phone_number = rand(1e9...1e11).to_i
+    numbers = Array.new(10){ rand(1..9) }
+    @user.phone_number = numbers.to_s
     assert_not @user.valid?
   end
 
