@@ -9,6 +9,8 @@ razor:
   email_club: true
   terms: true
   password_digest: <%= User.digest('password') %> 
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 nemo:
   first_name: Nmanja
@@ -20,3 +22,5 @@ nemo:
   email_club: true
   terms: true
   password_digest: <%= User.digest('password') %> 
+  activated: true
+  activated_at: <%= Time.zone.now %>

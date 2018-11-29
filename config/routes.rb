@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   get 'customer/signup', to: 'users#new'
   post 'customer/signup', to: 'users#create'
 
+  resources :account_activations, only: [:edit]
+
 end
