@@ -1,16 +1,22 @@
-class SessionsCustomerController < SessionsController
+class SessionsCustomerController < ApplicationController
   
-  def new
-    super
+  def new  
   end
 
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
-      if @user && @user.authenticate(params[:session][:password])  
+      if @user && @user.authenticate(params[:session][:password]) 
+        if @user.activated? 
           log_in(@user)
           params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
           flash[:success] = "Welcome back #{@user.first_name}"   
-          redirect_to root_path
+          redirect_back_or @user
+        else
+          message  = "Account not activated. "
+          message += "Check your email for the activation link."
+          flash[:warning] = message
+          redirect_to root_url
+        end
       else
           flash.now[:danger] = 'Invalid email/password combination'
           render  'new'
@@ -18,7 +24,16 @@ class SessionsCustomerController < SessionsController
   end
 
   def destroy
-    super
+    log_out if logged_in?
+    redirect_to root_url
+
+    # if current_user.admin
+    # log_out if logged_in?
+    #   redirect_to admin_dashboard_url
+    # else
+    #   log_out if logged_in?
+    #   redirect_to root_url
+    # end
   end
 
 

@@ -39,7 +39,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "phone number should not be more than 10 numbers" do
-    @user.phone_number = rand(1e9...1e11).to_i
+    numbers = Array.new(10){ rand(1..9) }
+    @user.phone_number = numbers.to_s
     assert_not @user.valid?
   end
 
@@ -100,5 +101,9 @@ class UserTest < ActiveSupport::TestCase
   test "Terms should be present" do
     @user.terms = nil
     assert_not @user.valid?
+  end
+
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?(:remember, '')
   end
 end
