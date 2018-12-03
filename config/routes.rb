@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   #log in routes for customers and admins
 
   
@@ -30,5 +34,6 @@ Rails.application.routes.draw do
   post 'customer/signup', to: 'users#create'
 
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
 end
