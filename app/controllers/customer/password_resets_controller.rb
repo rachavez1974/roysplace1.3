@@ -1,4 +1,4 @@
-class PasswordResetsController < ApplicationController
+class Customer::PasswordResetsController < ApplicationController
   before_action  :get_user,   only: [:edit, :update]
   before_action  :valid_user, only: [:edit, :update]
   before_action  :check_expiration, only: [:edit, :update] 
@@ -30,7 +30,7 @@ class PasswordResetsController < ApplicationController
       log_in(@user)
       @user.update_attribute(:reset_digest, nil)
       flash[:success] = "#{@user.first_name}, your password has been reset."
-      redirect_to @user
+      redirect_to customer_user_url(@user)
     else
       render 'edit'
     end       
@@ -57,7 +57,7 @@ class PasswordResetsController < ApplicationController
   def check_expiration
     if @user.password_reset_expired?
       flash[:danger] = "Password reset has expired, please use (forgot password) again."
-      redirect_to new_password_reset_url
+      redirect_to new_customer_password_reset_url
     end
   end
 

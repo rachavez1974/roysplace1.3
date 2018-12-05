@@ -1,23 +1,28 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
+  
 
-  get 'password_resets/edit'
+  namespace :customer do
+    get '/login',  to: 'sessions#new'
+    post '/login',  to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
+
+    get '/signup', to: 'users#new'
+    post '/signup', to: 'users#create'
+    resources :users, except: [:new, :create]
+    resources :account_activations, only: [:edit]
+    resources :password_resets,     only: [:new, :create, :edit, :update]
+
+  end
+
+  
 
   #log in routes for customers and admins
-
   
-  
-
-
-  get    '/customer/login',  to: 'sessions_customer#new'
-  post   '/customer/login',  to: 'sessions_customer#create'
-  delete '/customer/logout', to:  'sessions_customer#destroy'
-
-  get    '/admin/login',   to: 'sessions_admin#new'
-  post   '/admin/login',   to: 'sessions_admin#create'
-  delete '/admin/logout',  to: 'sessions_admin#destroy'
-
-
+  namespace :admin do
+    get '/login', to: 'sessions#new'
+    resources :users
+    get 'sessions/destroy'
+  end
 
   
 
@@ -29,11 +34,11 @@ Rails.application.routes.draw do
   get  '/offers', to: 'static_pages#offers'
   get  '/bagged', to: 'static_pages#bagged'
 
-  resources :users
-  get 'customer/signup', to: 'users#new'
-  post 'customer/signup', to: 'users#create'
+  # resources :users
+  # get 'customer/signup', to: 'users#new'
+  # post 'customer/signup', to: 'users#create'
 
-  resources :account_activations, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
+  # resources :account_activations, only: [:edit]
+  # resources :password_resets,     only: [:new, :create, :edit, :update]
 
 end

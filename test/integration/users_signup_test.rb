@@ -9,7 +9,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   test "attempting signing up with wrong information" do
     get customer_signup_path
     assert_no_difference 'User.count' do
-    post users_path, params: { user: {  first_name: " ",
+    post customer_signup_path, params: { user: {  first_name: " ",
                                         last_name: "",
                                         email: " ",
                                         phone_number: "",
@@ -35,7 +35,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     get customer_signup_path
     assert_template 'users/new'
     assert_difference 'User.count', 1 do 
-      post users_path, params: { user: {  first_name: "John",
+      post customer_signup_path, params: { user: {  first_name: "John",
                                           last_name: "Doe",
                                           email: "jd@gmail.com",
                                           phone_number: "3018675309",
@@ -56,19 +56,18 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     log_in_as(user)
     assert_not is_logged_in?
     # Invalid activation token
-    get edit_account_activation_path("invalid token", email: user.email)
+    get edit_customer_account_activation_path("invalid token", email: user.email)
     assert_not is_logged_in?
     # Valid token, wrong email
-    get edit_account_activation_path(user.activation_token, email: 'wrong')
+    get edit_customer_account_activation_path(user.activation_token, email: 'wrong')
     assert_not is_logged_in?
     # Valid activation token
-    get edit_account_activation_path(user.activation_token, email: user.email)
+    get edit_customer_account_activation_path(user.activation_token, email: user.email)
     assert user.reload.activated?
     follow_redirect!  
     assert_template 'users/show'
     assert is_logged_in?
-    
-     
+        
   end
 
 end
