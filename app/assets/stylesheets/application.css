@@ -13,6 +13,7 @@
  *= require static_pages.scss
  *= require reservations.scss
  *= require_self
+*= require font-awesome
  */
 
 

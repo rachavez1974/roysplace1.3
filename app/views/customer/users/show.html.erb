@@ -1,0 +1,139 @@
+<% provide(:title, 'Profile') %>
+
+<style type="text/css">
+.user-row {
+  margin-bottom: 14px;
+}
+
+.user-row:last-child {
+  margin-bottom: 0;
+}
+
+.table-user-information > tbody > tr {
+  border-top: 5px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+  border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+  border-top: 0;
+}
+.toppad
+{margin-top:20px;
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6  offset-md-0  toppad" >
+      <h1>Basic Information</h1>
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-user-information ">
+            <tbody>
+              <tr>
+                <td>First Name:</td>
+                <td><%= @user.first_name %></td>
+              </tr>
+              <tr>
+                <td>Last Name:</td>
+                <td><%= @user.last_name %></td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td><%= @user.email %></td>
+              </tr>
+              <tr>
+                <td>Phone Number:</td>
+                <td><%= @user.phone_number %></td>
+              </tr>
+              <tr>
+                <td>Birth Day:</td>
+                <td><%= @user.birth_day %></td>
+              </tr>                                                
+              <tr>
+                <td>Text Club:</td>
+                <% if @user.text_club %>
+                <td>
+                  YES
+                </td>
+                <% else %>
+                  <td>
+                  Not enrolled
+                </td>
+                <% end %>
+              </tr>
+              <tr>
+                <td>Email Club:</td>
+                <% if @user.email_club %>
+                <td>
+                  YES
+                </td>
+                <% else %>
+                  <td>
+                  Not enrolled
+                </td>
+                <% end %>
+              </tr>
+              <tr>
+                <td>Terms Agreement</td>
+                <% if @user.terms %>
+                <td>
+                  YES
+                </td>
+                <% else %>
+                  <td>
+                  Not enrolled
+                </td>
+                <% end %>                                         
+              </tr>
+            </tbody>
+          </table>
+          <%= link_to "Wanna edit ur profile", edit_customer_user_path(@user), class: "btn btn-primary" %>
+          <%= link_to "Delete Account", [:customer, @user], method: :delete,
+                                  data: { confirm: "You sure?" }, class: "btn btn-primary" %> 
+        </div>
+      </div>
+      <br>
+    </div>
+
+    
+      <div class="col-md-6  offset-md-0  toppad" >
+           <h1>Address Information</h1>
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-user-information ">
+            <tbody>
+              <tr>
+                <td> Stree Address:</td>
+                <td>  
+                </td>
+              </tr>
+              <tr>
+                <td>Unit Number:</td>
+                <td>
+                  
+                </td>
+              </tr>
+              <tr>
+                <td>City:</td>
+                <td>
+                  <Input
+                  icon="password-icon"
+                  name="newPassword"
+                  type="password"
+                  value=''
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>                          
+          <a href="#" onClick={props.handleSubmitPass} class="btn btn-primary ml-2">Cambiar clave</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
