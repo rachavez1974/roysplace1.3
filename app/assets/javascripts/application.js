@@ -37,7 +37,7 @@ function showAptNumberBox(choice){
 
 
 
-
+//JS for carrousel
 (function($){
   $(window).on('load', function() {
       window.loaded = true;
@@ -206,4 +206,9 @@ function showAptNumberBox(choice){
     }
   });
 })(jQuery);
+
+//JS carrousel ends here
+
+//
+
 

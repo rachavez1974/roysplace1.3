@@ -1,6 +1,8 @@
 class Customer::UsersController < ApplicationController
-   before_action :logged_in_user, only: [:edit, :update, :show, :destroy]
-   before_action :correct_user_exists,   only: [:edit, :update, :show, :destroy]
+   before_action :logged_in_user,         only: [:edit, :update, :show, :destroy]
+   before_action :correct_user_exists,    only: [:edit, :update, :show, :destroy]
+   before_action :already_a_user,         only: [:new, :create]
+
 
   def new
     @user = User.new()
@@ -70,6 +72,14 @@ class Customer::UsersController < ApplicationController
         @user = User.find(params[:id])   
         redirect_to(root_url) unless current_user?(@user)
        end
+    end
+
+    # Can't signup if user already signed in or signed up
+    def already_a_user
+      if logged_in?
+        flash[:danger] = "You're already a user."
+        redirect_to customer_user_path(current_user)
+      end
     end
 
 end

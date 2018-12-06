@@ -14,5 +14,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
  Rails.application.config.assets.precompile += %w( static_pages.scss reservations.scss 
                                                   admin/sessions.scss 
                                                   customer/sessions.scss customer/users.css
-                                                  customer/password_resets.css)
+                                                  customer/password_resets.scss admin/dashboard.scss)
 

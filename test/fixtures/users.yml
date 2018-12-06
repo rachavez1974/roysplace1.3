@@ -23,4 +23,5 @@ nemo:
   terms: true
   password_digest: <%= User.digest('password') %> 
   activated: true
+  admin: true
   activated_at: <%= Time.zone.now %>

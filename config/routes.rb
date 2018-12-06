@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
 
+  namespace :admin do
+    get 'dashboard/home'
+  end
+
   namespace :customer do
     get '/login',  to: 'sessions#new'
     post '/login',  to: 'sessions#create'
@@ -13,15 +17,14 @@ Rails.application.routes.draw do
     resources :password_resets,     only: [:new, :create, :edit, :update]
 
   end
-
-  
-
-  #log in routes for customers and admins
   
   namespace :admin do
     get '/login', to: 'sessions#new'
-    resources :users
-    get 'sessions/destroy'
+    post '/login',  to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
+    resources :users, except: [:new, :create]
+    resources :account_activations, only: [:edit]
+    resources :password_resets,     only: [:new, :create, :edit, :update]
   end
 
   
@@ -33,10 +36,6 @@ Rails.application.routes.draw do
   get  '/menus', to: 'static_pages#menus'
   get  '/offers', to: 'static_pages#offers'
   get  '/bagged', to: 'static_pages#bagged'
-
-  # resources :users
-  # get 'customer/signup', to: 'users#new'
-  # post 'customer/signup', to: 'users#create'
 
   # resources :account_activations, only: [:edit]
   # resources :password_resets,     only: [:new, :create, :edit, :update]
