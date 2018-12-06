@@ -1,0 +1,29 @@
+/* line 1, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
+.user-row {
+  margin-bottom: 14px;
+}
+
+/* line 5, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
+.user-row:last-child {
+  margin-bottom: 0;
+}
+
+/* line 9, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
+.table-user-information > tbody > tr {
+  border-top: 5px solid #dddddd;
+}
+
+/* line 13, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
+.table-user-information > tbody > tr:first-child {
+  border-top: 0;
+}
+
+/* line 18, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
+.table-user-information > tbody > tr > td {
+  border-top: 0;
+}
+
+/* line 21, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
+.toppad {
+  margin-top: 20px;
+}
