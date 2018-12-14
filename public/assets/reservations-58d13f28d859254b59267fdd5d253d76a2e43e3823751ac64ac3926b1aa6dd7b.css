@@ -1,0 +1,41 @@
+/*Reservation area*/
+/* line 6, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/reservations.scss */
+.reservation-area {
+  background: url(/assets/reservation-99aa07ba6363ac0b69defe87eb410b5d507450ac8b96d1c8abaedb9deff26838.jpg);
+  background-size: cover;
+  background-cover: 100%;
+  height: 500px;
+}
+
+/* line 13, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/reservations.scss */
+.reservation-box1 {
+  padding-left: 50px;
+  padding-top: 70px;
+}
+
+/* line 19, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/reservations.scss */
+.reservation-box2 {
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+/* line 26, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/reservations.scss */
+.reservation-area h1 {
+  font-size: 30px;
+  line-height: 30px;
+  color: white;
+  font-weight: 900;
+}
+
+/* line 33, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/reservations.scss */
+.reservation-area h3 {
+  font-size: 15px;
+  line-height: 20px;
+  color: white;
+}
+
+/* line 40, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/reservations.scss */
+.reservation-form {
+  padding-left: 20px;
+  padding-top: 80px;
+}

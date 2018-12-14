@@ -1,3 +1,4 @@
+
 <% provide(:title, 'Profile') %>
 <div class="container">
   <div class="row">
@@ -65,7 +66,7 @@
               </tr>
             </tbody>
           </table>
-          <%= link_to "Wanna edit ur profile", edit_customer_user_path(@user), class: "btn btn-primary" %>
+          <%= link_to "Wanna edit ur profile", edit_customer_user_path(current_user), class: "btn btn-primary" %>
           <%= link_to "Delete Account", [:customer, @user], method: :delete,
                                   data: { confirm: "You sure?" }, class: "btn btn-primary" %> 
         </div>

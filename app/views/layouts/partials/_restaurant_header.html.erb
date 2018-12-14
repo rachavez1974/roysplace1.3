@@ -34,9 +34,11 @@
               <p>
                  “Long practice has taught me that one pleasure leads to another, tell me what you eat, and I will tell you what you are.” Welcome to the lengthiest meal you'll ever eat in your life”. What begins as a breakfast demonstration of this technique for egg-and-cheese fondue turns into an impromptu day-long affair as we press more and more food on you, our delighted guests. (Jean Anthelme Brillat-Savarin)</p>
               <a class="primary-btn" <%= link_to "Check Our Menus", menus_path %></a>
+
               <% unless logged_in? %>
               <a class="primary-btn" <%= link_to "Join us now!", customer_signup_path %></a>
                <% end %> 
+               
             </div>
           </div>
         </div>          

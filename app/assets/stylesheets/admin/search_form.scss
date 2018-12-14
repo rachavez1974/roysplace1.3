@@ -1,0 +1,43 @@
+
+
+.box1{
+    height: 100%;
+    background: #6a89cc;
+    margin: 30px 0 30px 0;
+}
+.box1 .box2{
+    margin-left: 8%;
+    margin-right:8%;
+    height: 100%;
+    background: #4a69bd;
+}
+.box1 .box2 .box3{
+   
+    margin-left: 4%;
+    margin-right:4%;
+    height: 100%;
+    background: #1e3799;
+    padding:4%;
+}
+
+.box3 input[type="text"] {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: light-blue;
+}
+
+input,button{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-transform:uppercase;
+    box-sizing: border-box;
+
+}
+
+label{
+    color: #fff;
+    text-transform:uppercase;
+}
+
+

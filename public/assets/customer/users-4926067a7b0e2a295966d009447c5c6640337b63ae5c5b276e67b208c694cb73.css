@@ -1,39 +1,41 @@
+/* line 1, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .user-row {
   margin-bottom: 14px;
 }
 
+/* line 5, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .user-row:last-child {
   margin-bottom: 0;
 }
 
+/* line 9, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .table-user-information > tbody > tr {
-  border-top: 5px solid rgb(221, 221, 221);
+  border-top: 5px solid #dddddd;
 }
 
+/* line 13, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .table-user-information > tbody > tr:first-child {
   border-top: 0;
 }
 
-
+/* line 18, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .table-user-information > tbody > tr > td {
   border-top: 0;
 }
-.toppad
-{margin-top:20px;
+
+/* line 21, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
+.toppad {
+  margin-top: 20px;
 }
 
-
-
+/* line 27, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
-
-
-
-
+/* line 37, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .bg-red {
   background: #fa4251;
 }
@@ -41,22 +43,27 @@
 /* ==========================================================================
    #SPACING
    ========================================================================== */
+/* line 44, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .p-t-100 {
   padding-top: 100px;
 }
 
+/* line 48, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .p-t-180 {
   padding-top: 50px;
 }
 
+/* line 52, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .p-t-20 {
   padding-top: 20px;
 }
 
+/* line 56, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .p-t-30 {
   padding-top: 30px;
 }
 
+/* line 60, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .p-b-100 {
   padding-bottom: 100px;
 }
@@ -64,14 +71,17 @@
 /* ==========================================================================
    #WRAPPER
    ========================================================================== */
+/* line 67, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .wrapper {
   margin: 0 auto;
 }
 
+/* line 71, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .wrapper--w960 {
   max-width: 960px;
 }
 
+/* line 75, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .wrapper--w680 {
   max-width: 680px;
 }
@@ -79,6 +89,7 @@
 /* ==========================================================================
    #BUTTON
    ========================================================================== */
+/* line 82, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .btn {
   line-height: 40px;
   display: inline-block;
@@ -94,41 +105,45 @@
   font-weight: 700;
 }
 
+/* line 97, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .btn--radius {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
 
+/* line 103, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .btn--green {
   background: #57b846;
 }
 
+/* line 107, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .btn--green:hover {
   background: #4dae3c;
 }
 
-
-
-
 /* ==========================================================================
    #SELECT2
    ========================================================================== */
+/* line 117, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .select--no-search .select2-search {
   display: none !important;
 }
 
+/* line 121, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .rs-select2 .select2-container {
   width: 100% !important;
   outline: none;
 }
 
+/* line 126, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .rs-select2 .select2-container .select2-selection--single {
   outline: none;
   border: none;
   height: 36px;
 }
 
+/* line 132, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .rs-select2 .select2-container .select2-selection--single .select2-selection__rendered {
   line-height: 36px;
   padding-left: 0;
@@ -138,6 +153,7 @@
   font-weight: 500;
 }
 
+/* line 141, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow {
   height: 34px;
   right: 4px;
@@ -158,10 +174,12 @@
   align-items: center;
 }
 
+/* line 161, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow b {
   display: none;
 }
 
+/* line 165, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow:after {
   font-family: "Material-Design-Iconic-Font";
   content: '\f2f9';
@@ -173,6 +191,7 @@
   transition: all 0.4s ease;
 }
 
+/* line 176, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .rs-select2 .select2-container.select2-container--open .select2-selection--single .select2-selection__arrow::after {
   -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
@@ -181,6 +200,7 @@
   transform: rotate(-180deg);
 }
 
+/* line 184, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .select2-container--open .select2-dropdown--below {
   border: none;
   -webkit-border-radius: 3px;
@@ -197,7 +217,7 @@
 /* ==========================================================================
    #TITLE
    ========================================================================== */
-
+/* line 201, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .title {
   text-transform: uppercase;
   font-weight: 700;
@@ -207,6 +227,7 @@
 /* ==========================================================================
    #CARD
    ========================================================================== */
+/* line 210, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .card {
   overflow: hidden;
   -webkit-border-radius: 3px;
@@ -215,6 +236,7 @@
   background: #fff;
 }
 
+/* line 218, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .card-2 {
   -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
@@ -223,15 +245,16 @@
   -moz-border-radius: 10px;
   border-radius: 10px;
   width: 100%;
-  
 }
 
+/* line 229, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .card-2 .card-heading {
-  background-image: image-url('user_sign_up.jpg');
+  background-image: url(/assets/user_sign_up-74a8834db00e0ee4b822e14a241253fc6f4c8b1c354211cc52f739eaa174f676.jpg);
   width: 35%;
   display: table-cell;
 }
 
+/* line 235, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
 .card-2 .card-body {
   display: table-cell;
   padding: 30px 90px;
@@ -239,19 +262,22 @@
 }
 
 @media (max-width: 767px) {
+  /* line 242, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
   .card-2 {
     display: block;
   }
+
+  /* line 245, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
   .card-2 .card-heading {
     width: 100%;
     display: block;
     padding-top: 300px;
     background-position: left center;
   }
+
+  /* line 251, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/customer/users.scss */
   .card-2 .card-body {
     display: block;
     padding: 60px 50px;
   }
 }
-
-

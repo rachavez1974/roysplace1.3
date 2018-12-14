@@ -1,0 +1,50 @@
+<% provide(:title, "Search User") %>
+<% provide(:button_text, "Search") %>
+
+ 
+<div class="row">
+ <div class="col-md-8 col-md-offset-3">
+  <h1>Search by Category of your Choice</h1>
+</div>
+</div>       
+<div class="box1">
+  <div class="box2">
+    <div class="box3">
+      <div class=" show-or-hide">
+        <div class="row">
+          <div class="col-md-4">
+           <%= form_tag(admin_profile_path, method: :get, html: {class: "search-form"}) do %>
+           <div class="form-group" id="hide">
+            <label>Search by phone</label>
+            <%= text_field_tag(:phone_number, params[:phone_number], placeholder: "enter phone number", class: "form-control") %>
+            <%= submit_tag("Search") %>     
+          </div>
+          <% end %>
+        </div>
+
+        <div class="col-md-4">
+          <%= form_tag(admin_profile_path, method: :get, html: {class: "search-form"}) do %>
+          <div class="form-group" id="hide">
+            <label>Search by id</label>
+            <%= text_field_tag(:id, params[:id], placeholder: "enter id number", class: "form-control") %>
+            <%= submit_tag("Search") %>     
+          </div>
+          <% end %>
+        </div>
+
+        <div class="col-md-4">
+          <%= form_tag(admin_profile_path, method: :get, html: {class: "search-form"}) do %>
+          <div class="form-group" id="hide">
+            <label>Search by email</label>
+            <%= text_field_tag(:email, params[:email], placeholder: "enter email address", class: "form-control") %>
+            <%= submit_tag("Search") %>     
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

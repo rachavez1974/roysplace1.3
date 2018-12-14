@@ -1,9 +1,10 @@
-require 'test_helper'
+  require 'test_helper'
 
 class AdminUsersLoginTest < ActionDispatch::IntegrationTest
-  def setup
-    @user = users(:nemo)  
-  end
+    def setup
+      @user = users(:nemo)
+      @another_user = users(:razor)  
+    end
 
   test "attempting login with wrong credentials" do
     get admin_login_path
@@ -23,13 +24,13 @@ class AdminUsersLoginTest < ActionDispatch::IntegrationTest
     get admin_login_path
     assert_select "a[href=?]", admin_login_path, count: 1
     assert_template 'admin/sessions/new'
-    post admin_login_path, params: { session: {email: "mr.james.bond@gmail.com",
-                                              password: "password"
+    post admin_login_path, params: { session: { email: "mr.james.bond@gmail.com",
+                                                password: "password"
 
                                               }
                                    }
     assert is_logged_in?
-    assert_redirected_to admin_dashboard_home_path
+    assert_redirected_to admin_dashboard_home_url
     follow_redirect!  
     assert_template 'admin/dashboard/home'
     assert_not flash.empty?
@@ -46,6 +47,20 @@ class AdminUsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", admin_login_path, count: 1
     assert_select "a[href=?]", admin_logout_path, count: 0
     assert_select "a[href=?]", admin_user_path(@user), count: 0
+  end
+
+  test "log in not allowed as a non-admin" do
+    get admin_login_path
+    assert_template 'admin/sessions/new'
+    post admin_login_path, params: { session: {email: "razor@gmail.com",
+                                              password: "password"
+
+                                              }
+                                   }
+    assert_not is_logged_in?
+    assert_template 'admin/sessions/new'
+    assert_not flash.empty?
+    assert_select 'div.alert', "Invalid email/password combination for admin."
   end
 
   test "login with remembering" do

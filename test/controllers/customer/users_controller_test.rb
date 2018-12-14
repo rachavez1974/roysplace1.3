@@ -92,10 +92,20 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     test "redirect delete if user not logged in or correct user" do
       assert_no_difference "User.count" do
-        delete customer_user_path([:customer, @user])
+        delete customer_user_path(@user)
       end
       assert_redirected_to customer_login_url
       
     end
 
+    test "successful deletion of customer account" do
+      log_in_as(@user)
+      get customer_user_url(@user)
+      assert_template 'customer/users/show'
+      assert_select "a[href=?]", customer_user_path, count: 2
+      assert_difference 'User.count', -1 do
+      delete customer_user_path(@user)
+      end
+      assert_redirected_to root_url
+    end
 end

@@ -16,10 +16,10 @@ layout "admin_layout"
           message  = "Account not activated."
           message += "Please check with your network manager."
           flash[:warning] = message
-          redirect_to admin_dashboard_home_url
+          redirect_to admin_login_url
         end
       else
-          flash.now[:danger] = 'Invalid email/password combination'
+          flash.now[:danger] = 'Invalid email/password combination for admin.'
           render  'new'
       end     
   end

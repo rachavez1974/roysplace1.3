@@ -1,31 +1,4 @@
 <% provide(:title, 'Profile') %>
-
-<style type="text/css">
-.user-row {
-  margin-bottom: 14px;
-}
-
-.user-row:last-child {
-  margin-bottom: 0;
-}
-
-.table-user-information > tbody > tr {
-  border-top: 5px solid rgb(221, 221, 221);
-}
-
-.table-user-information > tbody > tr:first-child {
-  border-top: 0;
-}
-
-
-.table-user-information > tbody > tr > td {
-  border-top: 0;
-}
-.toppad
-{margin-top:20px;
-}
-</style>
-
 <div class="container">
   <div class="row">
     <div class="col-md-6  offset-md-0  toppad" >
@@ -92,8 +65,8 @@
               </tr>
             </tbody>
           </table>
-          <%= link_to "Wanna edit ur profile", edit_user_path(@user), class: "btn btn-primary" %>
-          <%= link_to "Delete Account", @user, method: :delete,
+          <%= link_to "Edit profile", edit_admin_user_path(@user), class: "btn btn-primary" %>
+          <%= link_to "Delete Customer", [:admin, @user], method: :delete,
                                   data: { confirm: "You sure?" }, class: "btn btn-primary" %> 
         </div>
       </div>

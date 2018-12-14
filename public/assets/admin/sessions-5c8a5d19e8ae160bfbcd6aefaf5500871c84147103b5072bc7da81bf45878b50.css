@@ -1,0 +1,115 @@
+/* line 6, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+#LoginForm {
+  background: url(/assets/admin_login_background-1bd99939025ffeef8d6b26541200451f0f41bceeffdb2df9af241ee3aceed232.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
+}
+
+/* line 14, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.form-heading {
+  color: #fff;
+  font-size: 23px;
+}
+
+/* line 16, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.panel h2 {
+  color: #444444;
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+/* line 17, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.panel p {
+  color: #777777;
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 24px;
+}
+
+/* line 19, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.login-form .form-control {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+
+/* line 28, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.login-form label {
+  color: white;
+  font-size: 12 px;
+  font-weight: 2px;
+}
+
+/* line 33, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.main-div {
+  background: #484848 none repeat scroll 0 0;
+  border-radius: 10px;
+  margin: 10px auto 30px;
+  max-width: 38%;
+  padding: 50px 50px;
+}
+
+/* line 41, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.login-form .form-group {
+  margin-bottom: 10px;
+}
+
+/* line 44, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.login-form {
+  text-align: center;
+}
+
+/* line 48, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.forgot label:hover {
+  color: blue;
+}
+
+/* line 51, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.login-form .btn.btn-primary {
+  background: #f0ad4e none repeat scroll 0 0;
+  border-color: #f0ad4e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+}
+
+/* line 61, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.forgot {
+  float: left;
+  text-align: left;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* line 67, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.botto-text {
+  color: #ffffff;
+  font-size: 14px;
+  margin: auto;
+}
+
+/* line 72, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.login-form .btn.btn-primary.reset {
+  background: #ff9900 none repeat scroll 0 0;
+}
+
+/* line 75, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.back {
+  text-align: left;
+  margin-top: 10px;
+}
+
+/* line 76, /Users/rchavez/workspace/roysplace/app/assets/stylesheets/admin/sessions.scss */
+.back a {
+  color: #444444;
+  font-size: 13px;
+  text-decoration: none;
+}
