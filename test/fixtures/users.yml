@@ -8,6 +8,7 @@ razor:
   text_club: true
   email_club: true
   terms: true
+  admin: false
   password_digest: <%= User.digest('password') %> 
   activated: true
   activated_at: <%= Time.zone.now %>

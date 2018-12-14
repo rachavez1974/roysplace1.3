@@ -12,7 +12,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
  Rails.application.config.assets.precompile += %w( static_pages.scss reservations.scss 
-                                                  admin/sessions.scss 
+                                                  admin/sessions.scss admin/users.scss
                                                   customer/sessions.scss customer/users.css
-                                                  customer/password_resets.scss admin/dashboard.scss)
+                                                  customer/password_resets.scss admin/dashboard.scss
+                                                  admin/search-form.scss)
 

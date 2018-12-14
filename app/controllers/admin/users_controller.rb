@@ -1,21 +1,28 @@
 class Admin::UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :show, :destroy]
-  before_action :correct_user,   only: [:edit, :update, :show, :destroy]
+  layout "admin_layout"
+  #Other Function definitions live in appplicaiton controller file
+  before_action :logged_in_admin
+  before_action :admin_user
+  before_action :find_customer
+
 
   def new
     @user = User.new()
   end
 
   def show
-    @user = User.find(params[:id])
+    if @user.nil?
+      flash.now[:danger] = "Customer not found, please try again!"
+      render 'admin/users/search_form'
+    end
   end
 
   def create
     @user = User.new(user_params)
-      if @user.save
-        @user.send_activation_email
-        flash[:info] = "Welcome to Roy's Place, please check your email to activate your account!"
-        redirect_to root_url
+  
+      if @user.save(validate: false)
+        flash[:info] = "#{@user.first_name} was added!"
+        redirect_to admin_user_url(@user)
       else
         render 'new'
       end     
@@ -25,21 +32,20 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
-      flash[:success] = "Your profile has been update!" 
-      redirect_to @user
+    @user.attributes = user_params
+    if @user.save(validate: false)
+      flash[:success] = "#{@user.first_name} profile has been updated!" 
+      redirect_to admin_user_url(@user)
     else
       render 'edit'
     end
   end
 
-  def destroy
+  def destroy 
     @user.destroy
     flash[:success] = "The account for #{@user.first_name} has been deleted!"
-    redirect_to root_url
+    redirect_to admin_dashboard_home_url
   end
-
-
 
 
   private
@@ -50,23 +56,20 @@ class Admin::UsersController < ApplicationController
                 #, :addresses_attributes => [:id, :street_address, :address_type, :unit_type, :city, :state,
                 #:zipcode, :number, :user_id])
   end
-   
-   # Before filters
-
-   # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "Please log in."
-      redirect_to customer_login_url
-    end
+ 
+  def find_customer
+    @user = User.find_by("id = ? OR phone_number = ? Or email = ?",  id, phone, email)
   end
 
-  # Confirms the correct user.
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  def phone
+     params[:phone_number]  
+  end
 
+  def id
+    params[:id]
+  end
 
+  def email
+     params[:email]
+  end
 end

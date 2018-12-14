@@ -1,5 +1,6 @@
 class Customer::UsersController < ApplicationController
-   before_action :logged_in_user,         only: [:edit, :update, :show, :destroy]
+   #Function definitions live in appplicaiton controller file
+   before_action :logged_in_customer,     only: [:edit, :update, :show, :destroy]
    before_action :correct_user_exists,    only: [:edit, :update, :show, :destroy]
    before_action :already_a_user,         only: [:new, :create]
 
@@ -9,6 +10,9 @@ class Customer::UsersController < ApplicationController
   end
 
   def show
+    if @user.admin?
+      render :layout => "admin_layout"
+    end
   end
 
   def create
@@ -23,11 +27,14 @@ class Customer::UsersController < ApplicationController
   end
 
   def edit
+    if @user.admin?
+      render :layout => "admin_layout"
+    end
   end
 
   def update  
     if @user.update_attributes(user_params)
-      flash[:success] = "Your profile has been update!" 
+      flash[:success] = "Your profile has been updated!" 
       redirect_to customer_user_url(@user)
     else
       render 'edit'
@@ -41,8 +48,6 @@ class Customer::UsersController < ApplicationController
   end
 
 
-
-
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :phone_number, 
@@ -52,34 +57,5 @@ class Customer::UsersController < ApplicationController
                 #:zipcode, :number, :user_id])
   end
    
-   # Before filters
-
-   # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "Please log in."
-      redirect_to customer_login_url
-    end
-  end
-
-  # Confirms the correct user and that user exists.
-    def correct_user_exists
-      user_exist = User.exists?(params[:id])
-       if !user_exist
-        redirect_to root_url
-       else
-        @user = User.find(params[:id])   
-        redirect_to(root_url) unless current_user?(@user)
-       end
-    end
-
-    # Can't signup if user already signed in or signed up
-    def already_a_user
-      if logged_in?
-        flash[:danger] = "You're already a user."
-        redirect_to customer_user_path(current_user)
-      end
-    end
-
+   
 end

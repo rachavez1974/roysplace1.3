@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post '/login',  to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
 
+
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
     resources :users, except: [:new, :create]
@@ -22,9 +23,16 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/login',  to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
+
+    root to: 'dashboard#home'
+    get '/signup', to: 'users#new'
+    post '/signup', to: 'users#create'
+    get '/search_customer', to: 'users#search_form'
+    get '/profile', to: 'users#show'
     resources :users, except: [:new, :create]
     resources :account_activations, only: [:edit]
     resources :password_resets,     only: [:new, :create, :edit, :update]
+
   end
 
   
