@@ -7,6 +7,7 @@ class Customer::UsersController < ApplicationController
 
   def new
     @user = User.new()
+    @user.addresses.build
   end
 
   def show
@@ -17,6 +18,7 @@ class Customer::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
       if @user.save
         @user.send_activation_email
         flash[:info] = "Welcome to Roy's Place, please check your email to activate your account!"
@@ -33,6 +35,7 @@ class Customer::UsersController < ApplicationController
   end
 
   def update  
+
     if @user.update_attributes(user_params)
       flash[:success] = "Your profile has been updated!" 
       redirect_to customer_user_url(@user)
@@ -50,11 +53,10 @@ class Customer::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone_number, 
+    params.require(:user).permit(:id, :first_name, :last_name, :phone_number, 
                 :birth_day, :email, :password, :password_confirmation,
-                :text_club, :email_club, :terms)
-                #, :addresses_attributes => [:id, :street_address, :address_type, :unit_type, :city, :state,
-                #:zipcode, :number, :user_id])
+                :text_club, :email_club, :terms, :addresses_attributes => [:id, :street_address, 
+                :address_type, :unit_type, :city, :state, :zipcode, :number, :user_id])
   end
    
    

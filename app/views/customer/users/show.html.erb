@@ -26,7 +26,9 @@
               </tr>
               <tr>
                 <td>Birth Day:</td>
-                <td><%= @user.birth_day %></td>
+                <td><%= @user.birth_day.month %> 
+                    <%= " - #{@user.birth_day.day}" %>
+                </td>
               </tr>                                                
               <tr>
                 <td>Text Club:</td>
@@ -53,7 +55,7 @@
                 <% end %>
               </tr>
               <tr>
-                <td>Terms Agreement</td>
+                <td>Terms Agreement:</td>
                 <% if @user.terms %>
                 <td>
                   YES
@@ -83,26 +85,32 @@
             <tbody>
               <tr>
                 <td> Stree Address:</td>
-                <td>  
-                </td>
+                <td> <%= @user.addresses.first.street_address %> </td>
               </tr>
               <tr>
                 <td>Unit Number:</td>
-                <td>
-                  
-                </td>
+                <td> <%= @user.addresses.first.number %></td>
               </tr>
               <tr>
                 <td>City:</td>
-                <td>
-                  <Input
-                  icon="password-icon"
-                  name="newPassword"
-                  type="password"
-                  value=''
-                  />
-                </td>
+                <td> <%= @user.addresses.first.city %></td>
               </tr>
+              <tr>
+                <td>State:</td>
+                <td> <%= @user.addresses.first.state %></td>
+              </tr>
+              <tr>
+                <td>Zipcode:</td>
+                <td> <%= @user.addresses.first.zipcode %></td>
+              </tr>
+              <tr>
+                <td>Type of Address:</td>
+                <td> <%= @user.addresses.first.address_type %></td>
+              </tr>
+              <tr>
+                <td>Type of Unit:</td>
+                <td> <%= @user.addresses.first.unit_type %></td>
+              </tr> 
             </tbody>
           </table>                          
           <a href="#" onClick={props.handleSubmitPass} class="btn btn-primary ml-2">Cambiar clave</a>

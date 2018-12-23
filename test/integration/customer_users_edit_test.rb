@@ -19,23 +19,36 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "sucessful edits with friendly forwarding" do
+  test "sucessful edits with friendly forwarding and address" do
     get edit_customer_user_path(@user)
     log_in_as(@user)
     assert_redirected_to edit_customer_user_url(@user)
-    name = "James"
-    email = "jc@gmail.com"
-    patch customer_user_path(@user), params: { user:{ first_name: name,
-                                             email: email,
-                                             password: "",
-                                             password_confirmation: ""
-                                            }
-                                    }
+    name = "John"
+    email = "jd@gmail.com"
+    apt_number = "2r"
+    patch customer_user_path(@user), params: { user: {  first_name: name,
+                                          last_name: "Doe",
+                                          email: email,
+                                          phone_number: "3018675309",
+                                          password: "1",
+                                          password_confirmation: "1",
+                                          terms: true, :addresses_attributes => [{ street_address: "333",
+                                                                  number: 'rt',
+                                                                  city: "Vienna",
+                                                                  state: "Maryland",
+                                                                  zipcode: "22222",
+                                                                  address_type: "Business",
+                                                                  unit_type: "None"
+                                                                  }]  
+                                       }
+                               }
+                                  
     assert_not flash.empty?
     assert_redirected_to customer_user_url(@user)
     @user.reload
     assert_equal name, @user.first_name
     assert_equal email, @user.email
+    assert_equal apt_number, @user.addresses.first.number
   end
 
 end

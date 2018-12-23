@@ -8,6 +8,8 @@ class Admin::UsersController < ApplicationController
 
   def new
     @user = User.new()
+    @user.addresses.build
+
   end
 
   def show
@@ -19,7 +21,6 @@ class Admin::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-  
       if @user.save(validate: false)
         flash[:info] = "#{@user.first_name} was added!"
         redirect_to admin_user_url(@user)
@@ -33,6 +34,7 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user.attributes = user_params
+   
     if @user.save(validate: false)
       flash[:success] = "#{@user.first_name} profile has been updated!" 
       redirect_to admin_user_url(@user)
@@ -50,11 +52,9 @@ class Admin::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone_number, 
-                :birth_day, :email, :password, :password_confirmation,
-                :text_club, :email_club, :terms)
-                #, :addresses_attributes => [:id, :street_address, :address_type, :unit_type, :city, :state,
-                #:zipcode, :number, :user_id])
+    params.require(:user).permit(:id, :first_name, :last_name, :phone_number,
+                :addresses_attributes => [:id, :street_address, :address_type, 
+                :unit_type, :city, :state, :zipcode, :number, :user_id])
   end
  
   def find_customer

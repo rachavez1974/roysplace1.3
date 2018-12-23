@@ -1,4 +1,4 @@
-require 'test_helper'
+  require 'test_helper'
 
 class AdminEditUserTest < ActionDispatch::IntegrationTest
   def setup
@@ -8,7 +8,7 @@ class AdminEditUserTest < ActionDispatch::IntegrationTest
 
   
   
-  test "Editing customer via search when is admin logged in" do
+  test "Editing customer via search when is admin logged in with address" do
     get admin_login_path
     log_in_as(@admin)
     assert is_logged_in?
@@ -21,19 +21,32 @@ class AdminEditUserTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", edit_admin_user_path(@user)
     get edit_admin_user_path(@user)
     name = "James"
-    email = "jc@gmail.com"
-    patch admin_user_path(@user), params: { user:{ first_name: name,
-                                             email: email,
-                                             password: "",
-                                             password_confirmation: ""
-                                            }
-                                    }
+    apt_number = "rt"
+    patch admin_user_path(@user), params: { user: { first_name: name,
+                                                last_name: "Doe",
+                                                phone_number: "3019675309",
+                                                :addresses_attributes =>
+                                                [{
+                                                  user_id: @user.id, 
+                                                  street_address: "8134 Fallow dr",
+                                                   unit_type: "Floor",
+                                                   address_type: "Residence",
+                                                   number: apt_number,
+                                                   city: "Islamabad",
+                                                   state: "State of the union",
+                                                   zipcode: "12345"
+
+                                                }]
+
+                                               }
+                                       }
 
     assert_not flash.empty?
     assert_redirected_to admin_user_url(@user)
     @user.reload
+    @user.addresses.reload
     assert_equal name, @user.first_name
-    assert_equal email, @user.email 
+    assert_equal apt_number, @user.addresses.first.number
   end
 
   

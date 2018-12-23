@@ -37,7 +37,7 @@ class AdminUsersLoginTest < ActionDispatch::IntegrationTest
     assert_select 'div.alert', "Welcome back #{@user.first_name}"
     assert_select "a[href=?]", admin_login_path, count: 0
     assert_select "a[href=?]", admin_logout_path, count: 1
-    assert_select "a[href=?]", admin_user_path(@user), count: 1
+    assert_select "a[href=?]", customer_user_path(@user), count: 1
     delete admin_logout_path
     assert_not is_logged_in?
     assert_redirected_to admin_login_url
