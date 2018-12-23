@@ -1,18 +1,26 @@
 class User < ApplicationRecord
+  has_many :addresses, dependent: :destroy
+  accepts_nested_attributes_for :addresses
+
   attr_accessor :remember_token, :activation_token, :reset_token
+
+
+
   
   #skip downcase_email call back because not needed for in store orders
   #Customer may choose to update their email later and can be done via website portal
-  before_save :downcase_email
+  before_save :downcase_email, :set_birth_day
   before_create :create_activation_digest
 
 
   VAILID_PHONENUMBER_REGEX = /\A\d{10}\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates_associated :addresses
   validates :first_name,   presence: true, length: {maximum: 50} 
   validates :last_name,    presence: true, length: {maximum: 50}
   validates :phone_number, presence: true, length: {maximum: 10},
-                           format: {with: VAILID_PHONENUMBER_REGEX}
+                           format: {with: VAILID_PHONENUMBER_REGEX},
+                           uniqueness: true
 
 
   validates :email,        presence: true, length: {maximum: 255}, 
@@ -91,6 +99,14 @@ class User < ApplicationRecord
   def create_activation_digest
     self.activation_token  = User.new_token
     self.activation_digest = User.digest(activation_token)
+  end
+
+  def set_birth_day
+    if self.birth_day.nil?
+      self.birth_day = Time.now()
+    else
+      self.birth_day
+    end
   end
 
 end

@@ -1,0 +1,30 @@
+<%= f.fields_for :addresses do |addrs| %>
+  <%= f.error_notification %> 
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-md-5">
+        <%= addrs.input :street_address, placeholder: "Type your street address" %>
+      </div>
+      <div class="form-group col-md-2">
+        <%= addrs.input :address_type, as: :select, :collection => Address.address_types.keys.to_a %>
+      </div>
+       <div class="clearfix"></div>
+      <div class="form-group col-md-2">
+        <%= addrs.input :unit_type, as: :select, :collection => Address.unit_types.keys.to_a, :input_html => {:onchange => "showAptNumberBox('user_addresses_attributes_0_unit_type');"} %>
+      </div>
+      <div class="form-group col-md-2">
+        <%= addrs.input :number %>    
+      </div>
+      <div class="form-group col-md-3">
+        <%= addrs.input :city %>
+      </div>
+      <div class="clearfix"></div>
+      <div class="form-group col-md-2">
+        <%= addrs.input :state %>
+      </div>
+      <div class="form-group col-md-2">
+        <%= addrs.input :zipcode %>
+      </div>
+  <% end %>
+    </div>
+  </div> 

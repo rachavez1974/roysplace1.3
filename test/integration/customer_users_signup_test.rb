@@ -6,7 +6,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     ActionMailer::Base.deliveries.clear
   end
 
-  test "attempting signing up with wrong information" do
+  test "attempting signing up with wrong information and no address" do
     get customer_signup_path
     assert_no_difference 'User.count' do
     post customer_signup_path, params: { user: {  first_name: " ",
@@ -31,7 +31,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
   end
 
-  test "attempting signing up with right information and with account activation" do
+  test "attempting signing up with right information and with account activation and address" do
     get customer_signup_path
     assert_template 'users/new'
     assert_difference 'User.count', 1 do 
@@ -41,9 +41,17 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                           phone_number: "3018675309",
                                           password: "1",
                                           password_confirmation: "1",
-                                          terms: true
+                                          terms: true, :addresses_attributes => [{ street_address: "333",
+                                                                  number: 'rt',
+                                                                  city: "Vienna",
+                                                                  state: "Maryland",
+                                                                  zipcode: "22222",
+                                                                  address_type: "Business",
+                                                                  unit_type: "Apt"
+                                                                  }]  
                                        }
                                }
+
     end
 
     assert_equal 1, ActionMailer::Base.deliveries.size
@@ -69,5 +77,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert is_logged_in?
         
   end
+
+    
 
 end

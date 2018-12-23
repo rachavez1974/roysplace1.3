@@ -1,0 +1,37 @@
+
+<div class="container">
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.input(:birth_day,  {label: "Earn more points as your birthday nears ", discard_year: true, default: {year: 1800}}) %>
+    </div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="container">
+  <div class="row">
+    <div class="form-group col-md-7">
+      <div><strong style="font-size: 25px">Join our text club and get ridiculous offers</strong></div>
+      <div class="clearfix"></div>
+      <div class="announcement">
+        <p>Yes! I agree to receive auto-dialed text messages from and on behalf of Roy's Place at the mobile phone number I entered above that contain (Roy's Place)'s offers. Consent is not required and is not a condition for purchase. By checking this box I am providing my digital signature. See below for additional mobile terms.* </p>
+        <%= f.input :text_club %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="container">
+  <div class="row">
+    <div class="form-group col-md-7">
+      <div class="announcement">
+        <p>Your email address will never be sold by Roy's Place. To read our privacy policy click here. To ensure future delivery of emails, please add specials@roysplaceoffers.com to your safe sender list or address book.</p>
+        <%= f.input :email_club %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'customer/users/partials/basic_address_form', :f => f %>
+
+
+            

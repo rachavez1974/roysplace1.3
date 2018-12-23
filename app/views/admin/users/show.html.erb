@@ -82,25 +82,31 @@
             <tbody>
               <tr>
                 <td> Stree Address:</td>
-                <td>  
-                </td>
+                <td> <%= @user.addresses.first.street_address %> </td>
               </tr>
               <tr>
                 <td>Unit Number:</td>
-                <td>
-                  
-                </td>
+                <td> <%= @user.addresses.first.number %></td>
               </tr>
               <tr>
                 <td>City:</td>
-                <td>
-                  <Input
-                  icon="password-icon"
-                  name="newPassword"
-                  type="password"
-                  value=''
-                  />
-                </td>
+                <td> <%= @user.addresses.first.city %></td>
+              </tr>
+              <tr>
+                <td>State:</td>
+                <td> <%= @user.addresses.first.state %></td>
+              </tr>
+              <tr>
+                <td>Zipcode:</td>
+                <td> <%= @user.addresses.first.zipcode %></td>
+              </tr>
+              <tr>
+                <td>Type of Address:</td>
+                <td> <%= @user.addresses.first.address_type %></td>
+              </tr>
+              <tr>
+                <td>Type of Unit:</td>
+                <td> <%= @user.addresses.first.unit_type %></td>
               </tr>
             </tbody>
           </table>                          

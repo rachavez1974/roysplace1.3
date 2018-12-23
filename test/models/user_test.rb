@@ -7,6 +7,9 @@ class UserTest < ActiveSupport::TestCase
             birth_day: Date.parse('January, 8'), email: "razorcut@gamil.com",
             text_club: true, email_club: true, terms: true, password: "123",
             password_confirmation: "123")
+
+    @address = @user.addresses.build(street_address: "1332 Rays ave NE", address_type: "Residence", unit_type: "Apt",
+                           number: "301", city: "Roma", state: "Maryland", zipcode: 47573, user_id: @user.id)
   end
 
   test "user should be valid" do
@@ -105,5 +108,12 @@ class UserTest < ActiveSupport::TestCase
 
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?(:remember, '')
+  end
+
+  test "associated addresses should be destroyed" do
+    @user.save
+    assert_difference 'Address.count', -1 do
+      @user.destroy
+    end
   end
 end
