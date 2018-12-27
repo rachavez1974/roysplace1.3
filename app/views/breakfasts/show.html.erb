@@ -1,0 +1,47 @@
+<% provide(:title, 'Breakfast Item Info') %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6  offset-md-0  toppad" >
+      <h1>Breakfast Item Information</h1>
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-user-information ">
+            <tbody>
+              <tr>
+                <td>Item's Name:</td>
+                <td><%= @item.name %></td>
+              </tr>
+              <tr>
+                <td>Item's Description:</td>
+                <td><%= @item.description %></td>
+              </tr>
+              <tr>
+                <td>Item's Price:</td>
+                <td><%= @item.price %></td>
+              </tr>
+              <tr>
+                <td>Item's Section:</td>
+                <td><%= @item.section %></td>
+              </tr>
+              <tr>
+                <td>Item's Availability:</td>
+                  <% if @item.availability %>
+                  <td>YES</td>
+                  <% else %>
+                  <td>NOT AVAILABLE</td>
+                  <% end %>
+              </tr>                                                
+            </tbody>
+          </table>
+          <%= link_to "Edit Item", edit_breakfast_path(@item), class: "btn btn-primary" %>
+          <%= link_to "Delete Item", @item, method: :delete,
+                                  data: { confirm: "You sure?" }, class: "btn btn-primary" %>
+
+
+
+          </div>
+        </div>
+        </div>
+      </div>
+      <br>
+    </div>

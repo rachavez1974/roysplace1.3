@@ -7,7 +7,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
   end
 
   test "attempting to search for a user without admin logged in" do
-    get admin_dashboard_home_path
+    get admin_root_path
     assert_template 'admin/dashboard/home'
     get admin_search_customer_path
     assert_not flash.empty?
@@ -40,7 +40,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
 
 
   test "sucessful searches with logged in admin" do
-    get admin_dashboard_home_path
+    get admin_root_path
     assert_template 'admin/dashboard/home'
     get admin_login_path
     assert_template 'admin/sessions/new'
@@ -48,7 +48,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
                                               password: "password" }
                                     }
     assert is_logged_in?
-    assert_redirected_to admin_dashboard_home_url
+    assert_redirected_to admin_root_url
     follow_redirect!
     assert_not flash.empty?
     assert_select 'div.alert', "Welcome back #{@admin.first_name}"
@@ -85,7 +85,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
   end
 
   test "sucessful searches with friendly forwarding" do
-    get admin_dashboard_home_path
+    get admin_root_path
     assert_template 'admin/dashboard/home'
     get admin_search_customer_path
     assert_not flash.empty?

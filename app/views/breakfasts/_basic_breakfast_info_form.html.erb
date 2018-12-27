@@ -1,0 +1,45 @@
+<% provide(:title, "Edit Breakfast Item") %>
+
+<div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+  <div class="wrapper wrapper--w960">
+    <div class="card card-2">
+      <div class="card-heading"></div>
+      <div class="card-body">
+        <h2 class="title">Breakfast Item Info</h2>
+        <%= simple_form_for(@item) do |f| %>
+        <%= f.error_notification %> 
+        <div class="container">
+          <div class="row">
+            <div class="form-group col-md-3">
+              <%= f.input :name, placeholder: "Type item's name here" %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= f.input :description, placeholder: "Type item's description here" %>
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group col-md-3">
+              <%= f.input :price, placeholder: "Type item's price here"%>
+            </div>
+            <div class="form-group col-md-3">
+              <%= f.input :section, as: :select, :collection => Breakfast.sections.keys.to_a%>
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group col-md-3">
+              <%= f.input :availability, { label: "Check or uncheck available/unavailable"} %>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="container">
+              <div class="row">
+                <div class=" btn">
+                  <%= f.submit "Save Item", class: "btn btn-lg btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

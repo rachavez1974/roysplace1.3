@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   
 
-  namespace :admin do
-    get 'dashboard/home'
-  end
+  
 
   namespace :customer do
     get '/login',  to: 'sessions#new'
@@ -24,11 +22,18 @@ Rails.application.routes.draw do
     post '/login',  to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
 
+
     root to: 'dashboard#home'
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
     get '/search_customer', to: 'users#search_form'
     get '/profile', to: 'users#show'
+    get '/additem', to: 'dashboard#add_new_breakfast_items'
+    get '/updateitem', to: 'dashboard#update_breakfast_items'
+    get '/searchitem', to: 'dashboard#search_breakfast_items'
+    get '/deleteitem', to: 'dashboard#delete_breakfast_items'
+
+    
     resources :users, except: [:new, :create]
     resources :account_activations, only: [:edit]
     resources :password_resets,     only: [:new, :create, :edit, :update]
@@ -45,7 +50,10 @@ Rails.application.routes.draw do
   get  '/offers', to: 'static_pages#offers'
   get  '/bagged', to: 'static_pages#bagged'
 
-  # resources :account_activations, only: [:edit]
-  # resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :breakfasts
+  get '/search_breakfast', to: 'breakfasts#search_form'
+  get '/breakfast_profile', to: 'breakfasts#show'
+
+  
 
 end
