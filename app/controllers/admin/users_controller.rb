@@ -9,7 +9,6 @@ class Admin::UsersController < ApplicationController
   def new
     @user = User.new()
     @user.addresses.build
-
   end
 
   def show
@@ -26,7 +25,7 @@ class Admin::UsersController < ApplicationController
         redirect_to admin_user_url(@user)
       else
         render 'new'
-      end     
+      end       
   end
 
   def edit
@@ -46,7 +45,7 @@ class Admin::UsersController < ApplicationController
   def destroy 
     @user.destroy
     flash[:success] = "The account for #{@user.first_name} has been deleted!"
-    redirect_to admin_dashboard_home_url
+    redirect_to admin_root_url
   end
 
 

@@ -1,4 +1,4 @@
-  require 'test_helper'
+require 'test_helper'
 
 class UsersEditTest < ActionDispatch::IntegrationTest
   def setup
@@ -15,6 +15,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                       password_confirmation: "235"
                                     }
                               } 
+  assert flash.empty?
+  assert_select 'div.alert', "Please review the problems below:"    
   assert_template 'customer/users/edit'  
   end
 

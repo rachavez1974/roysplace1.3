@@ -30,7 +30,7 @@ class AdminUsersLoginTest < ActionDispatch::IntegrationTest
                                               }
                                    }
     assert is_logged_in?
-    assert_redirected_to admin_dashboard_home_url
+    assert_redirected_to admin_root_url
     follow_redirect!  
     assert_template 'admin/dashboard/home'
     assert_not flash.empty?
