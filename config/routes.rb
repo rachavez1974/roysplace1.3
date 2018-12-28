@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     post '/login',  to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
 
-
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
     resources :users, except: [:new, :create]
@@ -31,7 +30,6 @@ Rails.application.routes.draw do
     get '/showcustomer', to: 'users#show'
 
     get '/search_customer', to: 'users#search_form'
-    
     get '/additem', to: 'dashboard#add_new_breakfast_items'
     get '/updateitem', to: 'dashboard#update_breakfast_items'
     get '/searchitem', to: 'dashboard#search_breakfast_items'
