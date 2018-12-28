@@ -24,17 +24,21 @@ Rails.application.routes.draw do
 
 
     root to: 'dashboard#home'
-    get '/signup', to: 'users#new'
-    post '/signup', to: 'users#create'
+    get '/addcustomer', to: 'users#new'
+    post '/addcustomer', to: 'users#create'
+    get '/customer/:id/edit', to: 'users#edit'
+    patch '/customer/:id/edit', to: 'users#update'
+    get '/showcustomer', to: 'users#show'
+
     get '/search_customer', to: 'users#search_form'
-    get '/profile', to: 'users#show'
+    
     get '/additem', to: 'dashboard#add_new_breakfast_items'
     get '/updateitem', to: 'dashboard#update_breakfast_items'
     get '/searchitem', to: 'dashboard#search_breakfast_items'
     get '/deleteitem', to: 'dashboard#delete_breakfast_items'
 
     
-    resources :users, except: [:new, :create]
+    resources :users, except: [:new, :create, :index, :edit, :update]
     resources :account_activations, only: [:edit]
     resources :password_resets,     only: [:new, :create, :edit, :update]
 

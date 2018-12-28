@@ -15,14 +15,14 @@ class AdminEditUserTest < ActionDispatch::IntegrationTest
     get admin_search_customer_path
     assert_template 'admin/users/search_form'
     #Look up user by phone number
-    get admin_profile_path, params: { phone_number: "#{@user.phone_number}"}
+    get admin_showcustomer_path, params: { phone_number: "#{@user.phone_number}"}
     assert flash.empty?
     assert_template 'admin/users/show'
-    assert_select "a[href=?]", edit_admin_user_path(@user)
-    get edit_admin_user_path(@user)
+    assert_select "a[href=?]", admin_path(@user)
+    get admin_path(@user)
     name = "James"
     apt_number = "rt"
-    patch admin_user_path(@user), params: { user: { first_name: name,
+    patch admin_path(@user), params: { user: { first_name: name,
                                                 last_name: "Doe",
                                                 phone_number: "3019675309",
                                                 :addresses_attributes =>

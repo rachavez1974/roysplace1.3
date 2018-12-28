@@ -11,9 +11,9 @@ class AdminDeleteCustomersTest < ActionDispatch::IntegrationTest
     log_in_as(@admin)
     get admin_search_customer_path
     assert_template 'admin/users/search_form'
-    assert_select "[action=?]", admin_profile_path, count: 3
+    assert_select "[action=?]", admin_showcustomer_path, count: 3
     #look with id number
-    get admin_profile_path, params: { id:  @user.id }
+    get admin_showcustomer_path, params: { id:  @user.id }
     assert flash.empty?
     assert_template 'admin/users/show'
     assert_select "a[href=?]", admin_user_path(@user), count: 1 

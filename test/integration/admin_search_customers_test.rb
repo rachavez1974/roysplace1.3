@@ -21,17 +21,17 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
     assert is_logged_in?
     get admin_search_customer_path
     #unsuccesful Look up user by phone number
-    get admin_profile_path, params: { phone_number: "2024567890"}
+    get admin_showcustomer_path, params: { phone_number: "2024567890"}
     assert_not flash.empty?
     assert_template 'admin/users/search_form'
     assert_select 'div.alert', "Customer not found, please try again!"
     #Unsucessful Look up user by id
-    get admin_profile_path, params: { id: "2024567890"}
+    get admin_showcustomer_path, params: { id: "2024567890"}
     assert_not flash.empty?
     assert_template 'admin/users/search_form'
     assert_select 'div.alert', "Customer not found, please try again!"
     #Unsucessful Look up user by email
-    get admin_profile_path, params: { emails: "2024567890@juno.com"}
+    get admin_showcustomer_path, params: { emails: "2024567890@juno.com"}
     assert_not flash.empty?
     assert_template 'admin/users/search_form'
     assert_select 'div.alert', "Customer not found, please try again!"
@@ -59,7 +59,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
     assert_select "input[type=text][name='id']"
     assert_select "input[type=text][name='email']"
     #Look up user by phone number
-    get admin_profile_path, params: { phone_number: "#{@user.phone_number}"}
+    get admin_showcustomer_path, params: { phone_number: "#{@user.phone_number}"}
     assert flash.empty?
     assert_template 'admin/users/show'
     #Look up user by id
@@ -69,7 +69,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
     assert_select "input[type=text][name='phone_number']"
     assert_select "input[type=text][name='id']"
     assert_select "input[type=text][name='email']"
-    get admin_profile_path, params: { id: "#{@user.id}"}
+    get admin_showcustomer_path, params: { id: "#{@user.id}"}
     assert flash.empty?
     assert_template 'admin/users/show'
     #Look up user by email
@@ -79,7 +79,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
     assert_select "input[type=text][name='phone_number']"
     assert_select "input[type=text][name='id']"
     assert_select "input[type=text][name='email']"
-    get admin_profile_path, params: { email: "#{@user.email}"}
+    get admin_showcustomer_path, params: { email: "#{@user.email}"}
     assert flash.empty?
     assert_template 'admin/users/show'
   end
@@ -99,7 +99,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_select 'div.alert', "Welcome back #{@admin.first_name}"
     #Look up user by phone number
-    get admin_profile_path, params: { phone_number: "#{@user.phone_number}"}
+    get admin_showcustomer_path, params: { phone_number: "#{@user.phone_number}"}
     assert flash.empty?
     assert_template 'admin/users/show'
     delete admin_logout_path
@@ -118,7 +118,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_select 'div.alert', "Welcome back #{@admin.first_name}"
     #Look up user by id
-    get admin_profile_path, params: { id: "#{@user.id}"}
+    get admin_showcustomer_path, params: { id: "#{@user.id}"}
     assert flash.empty?
     assert_template 'admin/users/show'
     delete admin_logout_path
@@ -137,7 +137,7 @@ class AdminSearchCustomersTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_select 'div.alert', "Welcome back #{@admin.first_name}"
     #Look up user by email
-    get admin_profile_path, params: { email: "#{@user.email}"}
+    get admin_showcustomer_path, params: { email: "#{@user.email}"}
     assert flash.empty?
     assert_template 'admin/users/show'
     delete admin_logout_path
