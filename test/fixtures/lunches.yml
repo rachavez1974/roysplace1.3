@@ -1,10 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyString
+  name: "Burger"
+  description: "A classic American Dish"
   price: 1.5
-  availability: false
+  availability: true
   section: 1
 
 two:

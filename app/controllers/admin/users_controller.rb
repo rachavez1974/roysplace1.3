@@ -33,8 +33,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
+    #use this method when validation isn't necessary
     @user.attributes = user_params
-   
     if @user.save(validate: false)
       flash[:success] = "#{@user.first_name} profile has been updated!" 
       redirect_to admin_user_url(@user)
