@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class AddBreakfastitemsTest < ActionDispatch::IntegrationTest
+class AddLunchitemsTest < ActionDispatch::IntegrationTest
   def setup
-    @admin = users(:nemo)  
+    @user = users(:nemo)  
   end
 
-  test "attempting to add a breakfast item without admin logged in" do
+  test "attempting to add a lunch item without admin logged in" do
     get admin_root_path
     assert_template 'admin/dashboard/home'
     get admin_addmenuitem_path
@@ -18,15 +18,15 @@ class AddBreakfastitemsTest < ActionDispatch::IntegrationTest
 
 
 
-  test "unsuccessful adding of breakfast items" do
-    log_in_as(@admin)
+  test "unsuccessful adding of lunch item" do
+    log_in_as(@user)
     get admin_addmenuitem_path
     assert_template 'admin/dashboard/add_new_menu_items'
-    assert_select "a[href=?]", new_breakfast_path, count: 1
-    get new_breakfast_path
-    assert_template 'breakfasts/new'
-    assert_no_difference 'Breakfast.count' do
-    post breakfasts_path, params: { breakfast: { name: " ",
+    assert_select "a[href=?]", new_lunch_path, count: 1
+    get new_lunch_path
+    assert_template 'lunches/new'
+    assert_no_difference 'Lunch.count' do
+    post lunches_path, params: { lunch: { name: " ",
                                                 description: "",
                                                 price: " ",
                                                 section: nil,
@@ -35,19 +35,19 @@ class AddBreakfastitemsTest < ActionDispatch::IntegrationTest
                               }
     end
     assert flash.empty?
-    assert_template 'breakfasts/new'
+    assert_template 'lunches/new'
     assert_select 'div.alert', "Please review the problems below:"    
   end
 
-  test "successful adding of breakfast items" do
-    log_in_as(@admin)
+  test "successful adding of lunch item" do
+    log_in_as(@user)
     get admin_addmenuitem_path
     assert_template 'admin/dashboard/add_new_menu_items'
-    assert_select "a[href=?]", new_breakfast_path, count: 1
-    get new_breakfast_path
-    assert_template 'breakfasts/new'
-    assert_difference 'Breakfast.count', 1 do
-    post breakfasts_path, params: { breakfast: { name: "Escargot",
+    assert_select "a[href=?]", new_lunch_path, count: 1
+    get new_lunch_path
+    assert_template 'lunches/new'
+    assert_difference 'Lunch.count', 1 do
+    post lunches_path, params: { lunch: { name: "Escargot",
                                                 description: "Snail mushrooms",
                                                 price: 21.99,
                                                 section: "A_La_Carte",
@@ -58,7 +58,7 @@ class AddBreakfastitemsTest < ActionDispatch::IntegrationTest
  
     assert_not flash.empty?
     follow_redirect! 
-    assert_template 'breakfasts/show'
+    assert_template 'lunches/show'
   end
 
 

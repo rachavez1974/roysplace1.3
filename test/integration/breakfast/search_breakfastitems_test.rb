@@ -9,8 +9,8 @@ class SearcBreakfastitemsTest < ActionDispatch::IntegrationTest
   test "unsuccessful search for breakfast item" do
     log_in_as(@admin)
     #item not found
-    get admin_searchitem_path
-    assert_template 'admin/dashboard/search_breakfast_items'
+    get admin_searchmenuitem_path
+    assert_template 'admin/dashboard/search_menu_items'
     assert_select "a[href=?]", search_breakfast_path, count: 1
     get search_breakfast_path
     assert_template 'breakfasts/search_form'
@@ -23,8 +23,8 @@ class SearcBreakfastitemsTest < ActionDispatch::IntegrationTest
   test "successful search for breakfast item" do
     log_in_as(@admin)
     #item not found
-    get admin_searchitem_path
-    assert_template 'admin/dashboard/search_breakfast_items'
+    get admin_searchmenuitem_path
+    assert_template 'admin/dashboard/search_menu_items'
     assert_select "a[href=?]", search_breakfast_path, count: 1
     get search_breakfast_path
     assert_template 'breakfasts/search_form'

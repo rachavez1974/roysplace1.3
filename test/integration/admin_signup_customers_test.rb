@@ -10,7 +10,7 @@ class AdminSignupUserTest < ActionDispatch::IntegrationTest
   test "attempting signing up user without admin logged in" do
     get admin_login_path
     assert_template 'admin/sessions/new'
-    get admin_signup_path
+    get admin_addcustomer_path
     assert_not flash.empty?
     follow_redirect!
     assert_template 'admin/sessions/new'
@@ -23,7 +23,7 @@ class AdminSignupUserTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     follow_redirect!
     assert_select 'div.alert', "Welcome back #{@another_user.first_name}" 
-    get admin_signup_path 
+    get admin_addcustomer_path 
     assert_redirected_to root_url
   end
 
@@ -38,11 +38,11 @@ class AdminSignupUserTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     follow_redirect!
     assert_template 'admin/dashboard/home'
-    get admin_signup_path
+    get admin_addcustomer_path
     assert_template 'admin/users/new'
     name = "John"
     assert_difference 'User.count', 1 do 
-      post admin_signup_path, params: { user: { first_name: name,
+      post admin_addcustomer_path, params: { user: { first_name: name,
                                                 last_name: "Doe",
                                                 phone_number: "3019675309",
                                                 :addresses_attributes =>

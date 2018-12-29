@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     post '/login',  to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
 
-
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
     resources :users, except: [:new, :create]
@@ -24,17 +23,19 @@ Rails.application.routes.draw do
 
 
     root to: 'dashboard#home'
-    get '/signup', to: 'users#new'
-    post '/signup', to: 'users#create'
+    get '/addcustomer', to: 'users#new'
+    post '/addcustomer', to: 'users#create'
+    get '/customer/:id/edit', to: 'users#edit'
+    patch '/customer/:id/edit', to: 'users#update'
+    get '/showcustomer', to: 'users#show'
     get '/search_customer', to: 'users#search_form'
-    get '/profile', to: 'users#show'
-    get '/additem', to: 'dashboard#add_new_breakfast_items'
-    get '/updateitem', to: 'dashboard#update_breakfast_items'
-    get '/searchitem', to: 'dashboard#search_breakfast_items'
-    get '/deleteitem', to: 'dashboard#delete_breakfast_items'
-
+    #routes for breakfast 
+    get '/addmenuitem',    to: 'dashboard#add_new_menu_items'
+    get '/updatemenuitem', to: 'dashboard#update_menu_items'
+    get '/searchmenuitem', to: 'dashboard#search_menu_items'
+    get '/deletemenuitem', to: 'dashboard#delete_menu_items'
     
-    resources :users, except: [:new, :create]
+    resources :users, except: [:new, :create, :index, :edit, :update]
     resources :account_activations, only: [:edit]
     resources :password_resets,     only: [:new, :create, :edit, :update]
 
@@ -50,9 +51,13 @@ Rails.application.routes.draw do
   get  '/offers', to: 'static_pages#offers'
   get  '/bagged', to: 'static_pages#bagged'
 
-  resources :breakfasts
-  get '/search_breakfast', to: 'breakfasts#search_form'
+  resources :breakfasts, except: [:index]
+  get '/search_breakfast', to:  'breakfasts#search_form'
   get '/breakfast_profile', to: 'breakfasts#show'
+
+  resources :lunches, except: [:index]
+  get '/search_lunch', to: 'lunches#search_form'
+  get '/lunch_profile', to: 'lunches#show'
 
   
 

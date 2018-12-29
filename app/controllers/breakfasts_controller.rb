@@ -22,7 +22,7 @@ before_action :find_item
   def create
     @item = Breakfast.new(breakfast_params)
       if @item.save
-        flash[:success] = "#{@item.name} was added successfully!"
+        flash[:success] = "#{@item.name} was added successfully to breakfast!"
         redirect_to @item
       else
         render 'new'
@@ -33,15 +33,14 @@ before_action :find_item
   end
 
   def update
-    @item.attributes = breakfast_params
-      if @item.save
+    if @item.update_attributes(breakfast_params)
       flash[:success] = "#{@item.name} information has been updated!" 
       redirect_to @item
     else
       render 'edit'
     end
   end
-
+  
   def destroy
     @item.destroy
     flash[:success] = "The breakfast #{@item.name} has been deleted!"

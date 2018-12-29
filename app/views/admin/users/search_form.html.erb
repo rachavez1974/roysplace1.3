@@ -13,7 +13,7 @@
       <div class=" show-or-hide">
         <div class="row">
           <div class="col-md-4">
-           <%= form_tag(admin_profile_path, method: :get, html: {class: "search-form"}) do %>
+           <%= form_tag(admin_showcustomer_path, method: :get, html: {class: "search-form"}) do %>
            <div class="form-group" id="hide">
             <label>Search by phone</label>
             <%= text_field_tag(:phone_number, params[:phone_number], placeholder: "enter phone number", class: "form-control") %>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-md-4">
-          <%= form_tag(admin_profile_path, method: :get, html: {class: "search-form"}) do %>
+          <%= form_tag(admin_showcustomer_path, method: :get, html: {class: "search-form"}) do %>
           <div class="form-group" id="hide">
             <label>Search by id</label>
             <%= text_field_tag(:id, params[:id], placeholder: "enter id number", class: "form-control") %>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="col-md-4">
-          <%= form_tag(admin_profile_path, method: :get, html: {class: "search-form"}) do %>
+          <%= form_tag(admin_showcustomer_path, method: :get, html: {class: "search-form"}) do %>
           <div class="form-group" id="hide">
             <label>Search by email</label>
             <%= text_field_tag(:email, params[:email], placeholder: "enter email address", class: "form-control") %>
