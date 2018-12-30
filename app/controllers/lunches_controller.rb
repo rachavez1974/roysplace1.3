@@ -23,7 +23,7 @@ before_action :find_item
   def create
     @item = Lunch.new(lunch_params)
       if @item.save
-        flash[:success] = "#{@item.name} was added successfully to lunch!"
+        flash[:success] = "#{@item.name} was added successfully to lunch menu!"
         redirect_to @item
       else
         render 'new'
@@ -56,15 +56,15 @@ before_action :find_item
 
     def find_item
     @item = Lunch.find_by("id = ? OR name = ?",  id, name)
-  end
+    end
 
-  def name
-     params[:name]  
-  end
+    def name
+       params[:name]  
+    end
 
-  def id
-    params[:id]
-  end 
+    def id
+      params[:id]
+    end 
   
 
 

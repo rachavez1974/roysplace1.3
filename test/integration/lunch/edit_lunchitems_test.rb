@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class EditBreakfastitemsTest < ActionDispatch::IntegrationTest
+class EditLunchitemsTest < ActionDispatch::IntegrationTest
   def setup
     @admin = users(:nemo)
     @item = lunches(:one)
     
   end
 
-  test "unsuccessful breakfast items edits via search" do
+  test "unsuccessful lunch items edits via search" do
     log_in_as(@admin)
     #item not found
     get admin_updatemenuitem_path
@@ -43,7 +43,7 @@ class EditBreakfastitemsTest < ActionDispatch::IntegrationTest
   end
 
 
-test "successful breakfast items edits via search" do
+test "successful lunch items edits via search" do
     log_in_as(@admin)
     get admin_updatemenuitem_path
     assert_template 'admin/dashboard/update_menu_items'

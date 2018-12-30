@@ -1,0 +1,38 @@
+<% provide(:title, "Search Happy Hour Item") %>
+<% provide(:button_text, "Search") %>
+
+ 
+<div class="row">
+ <div class="col-md-8 col-md-offset-3">
+  <h1>Search by Category of your Choice</h1>
+</div>
+</div>       
+<div class="box1">
+  <div class="box2">
+    <div class="box3">
+      <div class=" show-or-hide">
+        <div class="row">
+          <div class="col-md-4">
+           <%= form_tag(happyhour_profile_path, method: :get, html: {class: "search-form"}) do %>
+           <div class="form-group" id="hide">
+            <label>Search by item's number</label>
+            <%= text_field_tag(:id, params[:id], placeholder: "enter item's number", class: "form-control") %>
+            <%= submit_tag("Search") %>     
+          </div>
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <%= form_tag(happyhour_profile_path, method: :get, html: {class: "search-form"}) do %>
+          <div class="form-group" id="hide">
+            <label>Search by exact item's name</label>
+            <%= text_field_tag(:name, params[:name], placeholder: "enter item's name", class: "form-control") %>
+            <%= submit_tag("Search") %>     
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
