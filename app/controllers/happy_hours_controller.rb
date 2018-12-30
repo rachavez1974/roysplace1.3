@@ -45,6 +45,9 @@ before_action :find_item
   end
 
   def destroy
+    @item.destroy
+    flash[:sucess] = "The happy hour #{@item.name} has been deleted!" 
+    redirect_to admin_root_url
   end
 
   private
