@@ -22,7 +22,7 @@ before_action :find_item
   def create
     @item = Breakfast.new(breakfast_params)
       if @item.save
-        flash[:success] = "#{@item.name} was added successfully to breakfast!"
+        flash[:success] = "#{@item.name} was added successfully to breakfast menu!"
         redirect_to @item
       else
         render 'new'

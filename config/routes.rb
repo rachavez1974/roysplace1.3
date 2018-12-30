@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   
 
   namespace :customer do
@@ -59,6 +58,9 @@ Rails.application.routes.draw do
   get '/search_lunch', to: 'lunches#search_form'
   get '/lunch_profile', to: 'lunches#show'
 
+  resources :happy_hours, except: [:index]
+  get '/search_happyhour', to: 'happy_hours#search_form'
+  get '/happyhour_profile', to: 'happy_hours#show'
   
 
 end
