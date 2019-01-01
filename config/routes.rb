@@ -1,6 +1,4 @@
-Rails.application.routes.draw do
-  
-  
+Rails.application.routes.draw do  
 
   namespace :customer do
     get '/login',  to: 'sessions#new'
@@ -61,6 +59,10 @@ Rails.application.routes.draw do
   resources :happy_hours, except: [:index]
   get '/search_happyhour', to: 'happy_hours#search_form'
   get '/happyhour_profile', to: 'happy_hours#show'
+
+  resources :dinners, except: [:index]
+  get 'search_dinner', to: 'dinners#search_form'
+  get 'dinner_profile', to: 'dinners#show'
   
 
 end
