@@ -1,0 +1,2 @@
+module LatenightsHelper
+end

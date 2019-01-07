@@ -1,5 +1,7 @@
 Rails.application.routes.draw do  
 
+
+
   namespace :customer do
     get '/login',  to: 'sessions#new'
     post '/login',  to: 'sessions#create'
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
     patch '/customer/:id/edit', to: 'users#update'
     get '/showcustomer', to: 'users#show'
     get '/search_customer', to: 'users#search_form'
-    #routes for breakfast 
+     
     get '/addmenuitem',    to: 'dashboard#add_new_menu_items'
     get '/updatemenuitem', to: 'dashboard#update_menu_items'
     get '/searchmenuitem', to: 'dashboard#search_menu_items'
@@ -63,6 +65,10 @@ Rails.application.routes.draw do
   resources :dinners, except: [:index]
   get 'search_dinner', to: 'dinners#search_form'
   get 'dinner_profile', to: 'dinners#show'
+
+  resources :latenights, except: [:index]
+  get 'search_latenight', to: 'latenights#search_form'
+  get 'latenight_profile', to: 'latenights#show'
   
 
 end

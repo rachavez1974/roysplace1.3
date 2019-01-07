@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "NY Steak bites"
+  description: "Seasoned and cooked to a perfected medium rare"
+  price: 1.5
+  availability: true
+  section: 1
+
+two:
+  name: MyString
+  description: MyString
+  price: 1.5
+  availability: false
+  section: 1

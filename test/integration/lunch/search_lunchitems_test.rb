@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SearcLunchitemsTest < ActionDispatch::IntegrationTest
+class SearchLunchitemsTest < ActionDispatch::IntegrationTest
   def setup
     @admin = users(:nemo)
     @item = lunches(:one)
