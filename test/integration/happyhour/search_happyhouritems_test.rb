@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SearcHappyHouritemsTest < ActionDispatch::IntegrationTest
+class SearchHappyHouritemsTest < ActionDispatch::IntegrationTest
   def setup
     @admin = users(:nemo)
     @item = happy_hours(:one)
