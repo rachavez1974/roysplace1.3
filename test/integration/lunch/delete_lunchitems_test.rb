@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DeleteHappyHourtitemsTest < ActionDispatch::IntegrationTest
+class DeleteLunchitemsTest < ActionDispatch::IntegrationTest
   def setup
     @admin = users(:nemo)
     @item = lunches(:one)

@@ -1,4 +1,5 @@
 class LatenightsController < ApplicationController
+layout "admin_layout"
 #Other Function definitions live in appplicaiton controller file
 before_action :logged_in_admin
 before_action :admin_user
