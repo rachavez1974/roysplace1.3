@@ -2,6 +2,14 @@ Rails.application.routes.draw do
 
 
 
+  get 'brunches/menu'
+
+  get 'brunches/show'
+
+  get 'brunches/new'
+
+  get 'brunches/edit'
+
   namespace :customer do
     get '/login',  to: 'sessions#new'
     post '/login',  to: 'sessions#create'
@@ -69,6 +77,10 @@ Rails.application.routes.draw do
   resources :latenights, except: [:index]
   get 'search_latenight', to: 'latenights#search_form'
   get 'latenight_profile', to: 'latenights#show'
+
+  resources :brunches, except: [:index]
+  get 'search_brunch',  to: 'brunches#search_form'
+  get 'brunch_profile', to: 'brunches#show'
   
 
 end
