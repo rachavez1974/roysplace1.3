@@ -1,15 +1,5 @@
 Rails.application.routes.draw do  
 
-
-
-  get 'brunches/menu'
-
-  get 'brunches/show'
-
-  get 'brunches/new'
-
-  get 'brunches/edit'
-
   namespace :customer do
     get '/login',  to: 'sessions#new'
     post '/login',  to: 'sessions#create'
@@ -58,29 +48,36 @@ Rails.application.routes.draw do
   get  '/offers', to: 'static_pages#offers'
   get  '/bagged', to: 'static_pages#bagged'
 
+  get '/breakfast/menu', to: 'breakfasts#menu'
   resources :breakfasts, except: [:index]
   get '/search_breakfast', to:  'breakfasts#search_form'
   get '/breakfast_profile', to: 'breakfasts#show'
+  
 
+  get '/lunch/menu', to: 'lunches#menu'
   resources :lunches, except: [:index]
   get '/search_lunch', to: 'lunches#search_form'
   get '/lunch_profile', to: 'lunches#show'
 
+  get '/happyhour/menu', to: 'happy_hours#menu'
   resources :happy_hours, except: [:index]
   get '/search_happyhour', to: 'happy_hours#search_form'
   get '/happyhour_profile', to: 'happy_hours#show'
 
+  get 'dinner/menu', to: 'dinners#menu'
   resources :dinners, except: [:index]
-  get 'search_dinner', to: 'dinners#search_form'
-  get 'dinner_profile', to: 'dinners#show'
+  get '/search_dinner', to: 'dinners#search_form'
+  get '/dinner_profile', to: 'dinners#show'
 
+  get 'latenight/menu', to: 'latenights#menu'
   resources :latenights, except: [:index]
-  get 'search_latenight', to: 'latenights#search_form'
-  get 'latenight_profile', to: 'latenights#show'
+  get '/search_latenight', to: 'latenights#search_form'
+  get '/latenight_profile', to: 'latenights#show'
 
+  get 'brunch/menu', to: 'brunches#menu'
   resources :brunches, except: [:index]
-  get 'search_brunch',  to: 'brunches#search_form'
-  get 'brunch_profile', to: 'brunches#show'
+  get '/search_brunch',  to: 'brunches#search_form'
+  get '/brunch_profile', to: 'brunches#show'
   
 
 end

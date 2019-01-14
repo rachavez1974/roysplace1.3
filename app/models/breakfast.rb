@@ -1,5 +1,7 @@
 class Breakfast < ApplicationRecord
 
+  has_many :order_items
+
   enum section: [:Starters, :Classics, :Dishes, :A_La_Carte, :Confections]
   VALID_PRICE_REGEX = /^\d{1,4}(\.\d{0,2})?$/
 

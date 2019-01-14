@@ -1,15 +1,16 @@
 class BreakfastsController < ApplicationController
-layout "admin_layout"
+layout "admin_layout", except: :menu
 #Other Function definitions live in appplicaiton controller file
-before_action :logged_in_admin
-before_action :admin_user
-before_action :find_item
+before_action :logged_in_admin, except: :menu
+before_action :admin_user, except: :menu
+before_action :find_item, except: :menu
 
   def menu
+    @breakfasts = Breakfast.where("availability = ?", true)
   end
 
   def show
-    if @item.nil?
+      if @item.nil?
       flash.now[:danger] = "Breakfast item not found, please try again!"
       render 'breakfasts/search_form'
     end

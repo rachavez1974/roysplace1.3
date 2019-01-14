@@ -1,0 +1,30 @@
+<div class="wrap-item-mainmenu p-b-22">
+  <h3 class="tit-mainmenu tit10 p-b-25">
+    A La Carte
+  </h3>
+
+
+  <% @dinners.each do |dinner| %>
+  <% if dinner.section == "A_La_Carte" %>
+  <!-- Item mainmenu -->
+  <div class="item-mainmenu m-b-36">
+    <div class="flex-w flex-b m-b-3">
+      <a href="#" class="name-item-mainmenu txt21">
+        <%= dinner.name %>
+      </a>
+
+      <div class="line-item-mainmenu bg3-pattern"></div>
+
+      <div class="price-item-mainmenu txt22">
+        <%= dinner.price %>
+      </div>
+    </div>
+
+    <span class="info-item-mainmenu txt23">
+      <%= dinner.description %>
+    </span>
+  </div>
+  <% end %>
+  <% end %>
+
+    <%= render 'dinners/partials/confections_row' %>
