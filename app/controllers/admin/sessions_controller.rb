@@ -1,5 +1,6 @@
 class Admin::SessionsController < ApplicationController
 layout "admin_layout"
+before_action :redirect_to_admin_root, :if => :logged_in?, only: :new
 
   def new
   end
@@ -27,5 +28,11 @@ layout "admin_layout"
   def destroy
     log_out if logged_in?
     redirect_to admin_login_url
+  end
+
+  private
+
+  def redirect_to_admin_root
+    redirect_to admin_root_url  
   end
 end

@@ -15,6 +15,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
                                                   admin/sessions.scss admin/users.scss
                                                   customer/sessions.scss customer/users.css
                                                   customer/password_resets.scss admin/dashboard.scss
-                                                  admin/search-form.scss breakfasts.scss
-                                                  dinners.scss, latenights.scss, brunches.scss)
+                                                  admin/search-form.scss breakfasts.scss lunches.scss
+                                                  happy_hours.scss dinners.scss latenights.scss
+                                                  brunches.scss)
 

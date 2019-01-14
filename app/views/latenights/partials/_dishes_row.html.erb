@@ -1,0 +1,32 @@
+<div class="wrap-item-mainmenu p-b-22">
+  <h3 class="tit-mainmenu tit10 p-b-25">
+    Dishes
+  </h3>
+
+
+  <% @latenights.each do |latenight| %>
+  <% if latenight.section == "Dishes" %>
+  <!-- Item mainmenu -->
+  <div class="item-mainmenu m-b-36">
+    <div class="flex-w flex-b m-b-3">
+      <a href="#" class="name-item-mainmenu txt21">
+        <%= latenight.name %>
+      </a>
+
+      <div class="line-item-mainmenu bg3-pattern"></div>
+
+      <div class="price-item-mainmenu txt22">
+        <%= latenight.price %>
+      </div>
+    </div>
+
+    <span class="info-item-mainmenu txt23">
+      <%= latenight.description %>
+    </span>
+  </div>
+  <% end %>
+  <% end %>
+
+  <%= render 'latenights/partials/alacarte_row' %>  
+
+         
